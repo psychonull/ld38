@@ -1,10 +1,47 @@
 {
-  "nextEntryId": 1,
+  "nextEntryId": 8,
   "nodes": [
     {
       "id": "0",
       "name": "3D Model",
       "type": "model"
+    },
+    {
+      "id": "7",
+      "name": "masa amorfa",
+      "type": "model"
+    },
+    {
+      "id": "5",
+      "name": "Scene",
+      "type": "scene"
+    },
+    {
+      "id": "2",
+      "name": "Menus",
+      "type": null,
+      "children": [
+        {
+          "id": "3",
+          "name": "MainMenu",
+          "type": "scene"
+        },
+        {
+          "id": "6",
+          "name": "Base Font",
+          "type": "font"
+        },
+        {
+          "id": "4",
+          "name": "Main Menu Behavior",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Manager",
+      "type": "script"
     }
   ]
 }
