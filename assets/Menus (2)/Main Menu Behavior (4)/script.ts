@@ -4,7 +4,14 @@ class MainMenuBehavior extends Sup.Behavior {
   }
 
   update() {
-    
+    if(Sup.Input.wasKeyJustPressed("SPACE")){
+      this.hide();
+      Sup.log("Exit main menu");
+    }
+  }
+  
+  hide(){
+    this.actor.destroy();
   }
 }
 Sup.registerBehavior(MainMenuBehavior);

@@ -5,6 +5,35 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "MovementBehavior": {
+      "scriptId": "11",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "isMoving",
+          "type": "boolean"
+        },
+        {
+          "name": "angle",
+          "type": "number"
+        },
+        {
+          "name": "targetAngle",
+          "type": "number"
+        },
+        {
+          "name": "moveSpeed",
+          "type": "number"
+        }
+      ]
+    },
+    "SimpleShootBehavior": {
+      "scriptId": "13",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

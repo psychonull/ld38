@@ -1,20 +1,15 @@
 {
-  "nextEntryId": 8,
+  "nextEntryId": 22,
   "nodes": [
-    {
-      "id": "0",
-      "name": "3D Model",
-      "type": "model"
-    },
-    {
-      "id": "7",
-      "name": "masa amorfa",
-      "type": "model"
-    },
     {
       "id": "5",
       "name": "Scene",
       "type": "scene"
+    },
+    {
+      "id": "15",
+      "name": "Input",
+      "type": "script"
     },
     {
       "id": "2",
@@ -39,9 +34,47 @@
       ]
     },
     {
+      "id": "9",
+      "name": "Player",
+      "type": null,
+      "children": [
+        {
+          "id": "11",
+          "name": "Movement",
+          "type": "script"
+        },
+        {
+          "id": "13",
+          "name": "Simple Shoot",
+          "type": "script"
+        },
+        {
+          "id": "16",
+          "name": "Player model",
+          "type": "model"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "HUD",
+      "type": null,
+      "children": []
+    },
+    {
       "id": "1",
       "name": "Manager",
       "type": "script"
+    },
+    {
+      "id": "12",
+      "name": "3D Model",
+      "type": "model"
+    },
+    {
+      "id": "18",
+      "name": "bicho",
+      "type": "model"
     }
   ]
 }
