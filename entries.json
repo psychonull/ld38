@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 22,
+  "nextEntryId": 26,
   "nodes": [
     {
       "id": "5",
@@ -60,6 +60,28 @@
       "name": "HUD",
       "type": null,
       "children": []
+    },
+    {
+      "id": "24",
+      "name": "Grid",
+      "type": null,
+      "children": [
+        {
+          "id": "25",
+          "name": "Grid",
+          "type": "scene"
+        },
+        {
+          "id": "23",
+          "name": "Cell",
+          "type": "sprite"
+        },
+        {
+          "id": "22",
+          "name": "GridBehavior",
+          "type": "script"
+        }
+      ]
     },
     {
       "id": "1",

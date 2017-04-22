@@ -6,7 +6,8 @@ module Game {
   }
   
   export function showTitleScren() {
-    Sup.appendScene(Sup.get("Menus/MainMenu", Sup.Scene));
+    //Sup.appendScene(Sup.get("Menus/MainMenu", Sup.Scene));
+    Sup.appendScene(Sup.get("Grid/Grid", Sup.Scene));
   }
 
 }

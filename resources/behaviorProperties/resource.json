@@ -34,6 +34,12 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "GridBehavior": {
+      "scriptId": "22",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }
