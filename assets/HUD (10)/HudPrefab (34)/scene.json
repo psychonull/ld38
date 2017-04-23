@@ -6,20 +6,88 @@
       "name": "Hud Content",
       "children": [
         {
-          "id": "1",
-          "name": "Generation",
+          "id": "4",
+          "name": "GenerationValue",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "GenerationBehavior",
+                "propertyValues": {}
+              },
+              "id": "4"
+            }
+          ],
+          "position": {
+            "x": 1.3774813413619995,
+            "y": -1.693991058537847e-10,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "7",
+          "name": "PopulationValue",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "PopulationBehavior",
+                "propertyValues": {}
+              },
+              "id": "1"
+            }
+          ],
+          "position": {
+            "x": 10.13,
+            "y": 0,
+            "z": 2.685
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "8",
+          "name": "FPSValue",
           "children": [],
           "components": [
             {
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "6",
-                "text": "Generation:",
+                "fontAssetId": "69",
+                "text": "FPS: 0",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 15,
-                "color": "ffffff",
+                "size": null,
+                "color": null,
                 "overrideOpacity": false,
                 "opacity": null
               },
@@ -27,7 +95,7 @@
             }
           ],
           "position": {
-            "x": 0,
+            "x": 15,
             "y": 0,
             "z": 0
           },
@@ -47,23 +115,23 @@
           "prefab": null
         },
         {
-          "id": "4",
-          "name": "GenerationValue",
+          "id": "9",
+          "name": "PowerUps",
           "children": [],
           "components": [
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "GenerationBehavior",
+                "behaviorName": "PowerupsHudBehavior",
                 "propertyValues": {}
               },
-              "id": "4"
+              "id": "0"
             }
           ],
           "position": {
-            "x": 2.262033700942993,
-            "y": -0.08201969414949417,
-            "z": 0
+            "x": 20,
+            "y": 0,
+            "z": 2.401
           },
           "orientation": {
             "x": 0,
@@ -89,6 +157,14 @@
             "propertyValues": {}
           },
           "id": "13"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "CameraHudBehavior",
+            "propertyValues": {}
+          },
+          "id": "16"
         }
       ],
       "position": {

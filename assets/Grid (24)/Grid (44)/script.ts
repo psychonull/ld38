@@ -2,9 +2,9 @@ module Grid {
   
   export enum CellState {
     Empty = -1,
-    Growing = 0,
+    Baby = 0,
     Alive = 1,
-    Dead = 2
+    Dead = 2   
   };
 
   export const generateEmptyGrid = (rows: Number, cols: Number) => {
@@ -45,15 +45,15 @@ module Grid {
       return value;
     }
     
-    if (value === CellState.Growing) {
+    if (value === CellState.Baby) {
       return CellState.Alive;
     }
     
     if (value === CellState.Alive && alives < 2 || alives > 4) {
-      return CellState.Growing;
+      return CellState.Baby;
     }
     else if (value !== CellState.Alive && (alives === 3 || alives === 4)) {
-      return CellState.Growing;
+      return CellState.Baby;
     }
 
     return value;

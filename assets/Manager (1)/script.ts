@@ -32,8 +32,8 @@ module Game {
   export function reset(gameMode = GameModes.normal) {
     Game.mode = gameMode;
     Sup.loadScene('Scene');
-    let grid = Sup.appendScene(Sup.get("Grid/GridPrefab", Sup.Scene))[0];
     let hud = Sup.appendScene(Sup.get("HUD/HudPrefab", Sup.Scene))[0];
+    let grid = Sup.appendScene(Sup.get("Grid/GridPrefab", Sup.Scene))[0];
     hud.getBehavior(HubBehavior).initialize(grid);
     this.firstGame = false;
   }

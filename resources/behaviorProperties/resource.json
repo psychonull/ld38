@@ -71,6 +71,10 @@
         {
           "name": "generation",
           "type": "number"
+        },
+        {
+          "name": "population",
+          "type": "number"
         }
       ]
     },
@@ -192,6 +196,10 @@
         {
           "name": "font",
           "type": "string"
+        },
+        {
+          "name": "generations",
+          "type": "string"
         }
       ]
     },
@@ -205,6 +213,69 @@
           "type": "any"
         }
       ]
+    },
+    "PopulationBehavior": {
+      "scriptId": "70",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "font",
+          "type": "string"
+        },
+        {
+          "name": "population",
+          "type": "string"
+        }
+      ]
+    },
+    "SizeChangeBehavior": {
+      "scriptId": "71",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "scale",
+          "type": "number"
+        },
+        {
+          "name": "time",
+          "type": "number"
+        },
+        {
+          "name": "sizeChanged",
+          "type": "boolean"
+        },
+        {
+          "name": "timer",
+          "type": "number"
+        }
+      ]
+    },
+    "SpeedChangeBehavior": {
+      "scriptId": "72",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "speedFactor",
+          "type": "number"
+        },
+        {
+          "name": "time",
+          "type": "number"
+        },
+        {
+          "name": "timer",
+          "type": "number"
+        }
+      ]
+    },
+    "PowerupsHudBehavior": {
+      "scriptId": "73",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

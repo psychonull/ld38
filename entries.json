@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 70,
+  "nextEntryId": 74,
   "nodes": [
     {
       "id": "5",
@@ -74,9 +74,19 @@
           "type": "script"
         },
         {
+          "id": "70",
+          "name": "PopulationBehavior",
+          "type": "script"
+        },
+        {
           "id": "34",
           "name": "HudPrefab",
           "type": "scene"
+        },
+        {
+          "id": "73",
+          "name": "PowerupsHud",
+          "type": "script"
         }
       ]
     },
@@ -104,6 +114,16 @@
           "id": "66",
           "name": "PowerUpPrefab",
           "type": "scene"
+        },
+        {
+          "id": "71",
+          "name": "SizeChange",
+          "type": "script"
+        },
+        {
+          "id": "72",
+          "name": "SpeedChange",
+          "type": "script"
         }
       ]
     },

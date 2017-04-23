@@ -18,6 +18,7 @@ class GridBehavior extends Sup.Behavior {
   private tickGeneration: Function;
   
   generation = 0;
+  population = 0;
 
   createBorders() {
     let leftBorderActor = new Sup.Actor("leftBorder");
@@ -97,11 +98,22 @@ class GridBehavior extends Sup.Behavior {
   
   updateCellsState(grid) {
     this.aliveCells = [];
+    this.population = 0;
+    
+    const nonPopulation  = [
+      Grid.CellState.Empty,
+      Grid.CellState.Dead
+    ];
+    
     for (let y = 0; y < grid.length; y++) {
       for (let x = 0; x < grid[y].length; x++) {
         if(grid[y][x] == Grid.CellState.Alive){
           this.aliveCells.push(this.cells[y][x]);
         }
+        if(nonPopulation.indexOf(grid[y][x]) == -1) {
+          this.population++;
+        }
+          
         
         this.cells[y][x].getBehavior(CellBehavior).setState(grid[y][x]);
       }
@@ -110,7 +122,7 @@ class GridBehavior extends Sup.Behavior {
   
   killCell(cell: Sup.Actor) {
     let cellBehavior = cell.getBehavior(CellBehavior);
-    this.grid[cellBehavior.gridY][cellBehavior.gridX] = Grid.CellState.Dead;
+    this.grid[cellBehavior.gridY][cellBehavior.gridX] = Grid.CellState.Empty; // Grid.CellState.Dead;
     this.updateCellsState(this.grid);
   }
   
@@ -125,26 +137,20 @@ class GridBehavior extends Sup.Behavior {
 
       const ranges = behavior.getRandomEnemyPositions(4, this.columns, this.rows);
       ranges.forEach(rnd => {
-        this.grid[rnd.y][rnd.x] = Grid.CellState.Growing;
+        this.grid[rnd.y][rnd.x] = Grid.CellState.Baby;
       })
 
       this.updateCellsState(this.grid);
-
-      /*
-      behavior.onTick(() => {
-        this.updateCellsState(this.grid);
-      });
-      */
-
       this.spawners.push(actor);
     }
   }
   
   getStats() {
-    return {generation: this.generation};
+    return {generation: this.generation, population: this.population};
   }
   
   awake() {
+    this.oveerridePropsBasedOnGameDifficulty();
     this.createCells();
     this.createBorders();
     this.initSpawners(this.spawnersAmount);
@@ -152,6 +158,15 @@ class GridBehavior extends Sup.Behavior {
 
   update() {
     this.tickGeneration();
+  }
+  
+  oveerridePropsBasedOnGameDifficulty() {
+    if(Game.mode === GameModes.zen){
+      this.generateEvery = this.generateEvery + 4;
+    }
+    else if(Game.mode === GameModes.frenzy){
+      this.generateEvery = .2;
+    }
   }
 }
 Sup.registerBehavior(GridBehavior);

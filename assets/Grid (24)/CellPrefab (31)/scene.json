@@ -38,8 +38,8 @@
             "formatVersion": 2,
             "type": "box",
             "movable": false,
-            "width": 1,
-            "height": 1,
+            "width": 0.8,
+            "height": 0.8,
             "offset": {
               "x": 0,
               "y": 0
