@@ -21,7 +21,7 @@ class CellSpawnerBehavior extends Sup.Behavior {
   }
   
   getRandomEnemyPositions(offset, cols, rows) {
-    const halfOffset = offset / 2; // Must Be Integer
+    const halfOffset = Math.round(offset / 2);
     
     const rnd = Utils.getRandomPosition(
       {x: offset, y: offset},

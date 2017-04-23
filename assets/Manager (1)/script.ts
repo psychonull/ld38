@@ -41,4 +41,5 @@ module Game {
 }
 
 
-Game.initialize();
+//Game.showTitleScren(); //Descomentar para tener menu inicial
+Game.initialize(); //Comentar para tener menu inicial

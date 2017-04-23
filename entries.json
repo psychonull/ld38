@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 74,
+  "nextEntryId": 75,
   "nodes": [
     {
       "id": "5",
@@ -259,6 +259,11 @@
           "type": "shader"
         }
       ]
+    },
+    {
+      "id": "74",
+      "name": "Background",
+      "type": "sprite"
     },
     {
       "id": "1",

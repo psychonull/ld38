@@ -5,7 +5,6 @@ class HubBehavior extends Sup.Behavior {
 
   initialize(grid){
     this.grid = grid;
-    Sup.log(this.grid);
   }
   
   update() {

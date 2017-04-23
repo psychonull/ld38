@@ -52,27 +52,27 @@
       "children": [],
       "components": [
         {
-          "type": "TextRenderer",
-          "config": {
-            "formatVersion": 2,
-            "fontAssetId": "6",
-            "text": "Game over",
-            "alignment": "center",
-            "verticalAlignment": "center",
-            "size": null,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null
-          },
-          "id": "0"
-        },
-        {
           "type": "Behavior",
           "config": {
             "behaviorName": "GameOverBehavior",
             "propertyValues": {}
           },
           "id": "1"
+        },
+        {
+          "type": "TextRenderer",
+          "config": {
+            "formatVersion": 2,
+            "fontAssetId": "69",
+            "text": "Game Over",
+            "alignment": "center",
+            "verticalAlignment": "center",
+            "size": 65,
+            "color": null,
+            "overrideOpacity": false,
+            "opacity": null
+          },
+          "id": "2"
         }
       ],
       "position": {
@@ -87,9 +87,9 @@
         "w": 1
       },
       "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
+        "x": 1.6322987627837247,
+        "y": 1.209745941303172,
+        "z": 0.3701116682456789
       },
       "visible": true,
       "layer": 0,
@@ -104,11 +104,11 @@
           "type": "TextRenderer",
           "config": {
             "formatVersion": 2,
-            "fontAssetId": "6",
+            "fontAssetId": "69",
             "text": "Press <<space>> to try again",
             "alignment": "center",
             "verticalAlignment": "center",
-            "size": 16,
+            "size": 35,
             "color": "ffffff",
             "overrideOpacity": false,
             "opacity": null

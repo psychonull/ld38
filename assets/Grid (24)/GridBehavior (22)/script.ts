@@ -19,36 +19,55 @@ class GridBehavior extends Sup.Behavior {
   
   generation = 0;
   population = 0;
+  
+  getOffset() {
+   return  {
+      x: this.cellSize * Math.round(this.columns / 2) * -1,
+      y: this.cellSize * Math.round(this.rows / 2) * -1
+    };
+  }
 
   createBorders() {
+    const offset = this.getOffset();
+      
     let leftBorderActor = new Sup.Actor("leftBorder");
     let rightBorderActor = new Sup.Actor("rightBorder");
     let topBorderActor = new Sup.Actor("topBorder");
     let bottomBorderActor = new Sup.Actor("bottomBorder");
 
+    let x, y;
+    
+    x = -this.cellSize + offset.x;
+    y = (this.rows*this.cellSize/2-this.cellSize/2) + offset.y;
     new Sup.SpriteRenderer(leftBorderActor, "Grid/BorderV");
     leftBorderActor.setLocalScaleY(this.columns*this.cellSize+this.cellSize);
-    leftBorderActor.setPosition(-this.cellSize, this.rows*this.cellSize/2-this.cellSize/2, 0);
+    leftBorderActor.setPosition(x, y, 0);
     let leftBorder = new Sup.ArcadePhysics2D.Body(leftBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:0.1, height:this.columns*this.cellSize, movable: false})
-    leftBorderActor.arcadeBody2D.warpPosition(-this.cellSize, this.rows*this.cellSize/2-this.cellSize/2);
-
+    leftBorderActor.arcadeBody2D.warpPosition(x, y);
+    
+    x = (this.columns*this.cellSize) + offset.x;
+    y = (this.rows*this.cellSize/2-this.cellSize/2) + offset.y;
     new Sup.SpriteRenderer(rightBorderActor, "Grid/BorderV");
     rightBorderActor.setLocalScaleY(this.columns*this.cellSize+this.cellSize);
-    rightBorderActor.setPosition(this.columns*this.cellSize, this.rows*this.cellSize/2-this.cellSize/2, 0);
+    rightBorderActor.setPosition(x, y, 0);
     let rightBorder = new Sup.ArcadePhysics2D.Body(rightBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:0.1, height:this.columns*this.cellSize+this.cellSize, movable: false})
-    rightBorderActor.arcadeBody2D.warpPosition(this.columns*this.cellSize, this.rows*this.cellSize/2-this.cellSize/2);
+    rightBorderActor.arcadeBody2D.warpPosition(x, y);
 
+    x = (this.columns*this.cellSize/2-this.cellSize/2) + offset.x;
+    y = (this.rows*this.cellSize) + offset.y;
     new Sup.SpriteRenderer(topBorderActor, "Grid/BorderH");
     topBorderActor.setLocalScaleX(this.rows*this.cellSize+this.cellSize);
-    topBorderActor.setPosition(this.columns*this.cellSize/2-this.cellSize/2, this.rows*this.cellSize, 0);
+    topBorderActor.setPosition(x, y, 0);
     let topBorder = new Sup.ArcadePhysics2D.Body(topBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:this.rows*(this.cellSize+1), height:0.1, movable: false})
-    topBorderActor.arcadeBody2D.warpPosition(this.columns*this.cellSize/2-this.cellSize/2, this.rows*this.cellSize);
+    topBorderActor.arcadeBody2D.warpPosition(x, y);
 
+    x = (this.columns*this.cellSize/2-this.cellSize/2) + offset.x;
+    y = -this.cellSize + offset.y;
     new Sup.SpriteRenderer(bottomBorderActor, "Grid/BorderH");
     bottomBorderActor.setLocalScaleX(this.rows*this.cellSize+this.cellSize);
-    bottomBorderActor.setPosition(this.columns*this.cellSize/2-this.cellSize/2, -this.cellSize, 0);
+    bottomBorderActor.setPosition(x, y, 0);
     let bottomBorder = new Sup.ArcadePhysics2D.Body(bottomBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:this.rows*(this.cellSize+1), height:0.1, movable: false})
-    bottomBorderActor.arcadeBody2D.warpPosition(this.columns*this.cellSize/2-this.cellSize/2, -this.cellSize);
+    bottomBorderActor.arcadeBody2D.warpPosition(x, y);
 
     this.borders.push(leftBorder);
     this.borders.push(rightBorder);
@@ -58,6 +77,7 @@ class GridBehavior extends Sup.Behavior {
   
   createCells() {
     this.grid = Grid.generateEmptyGrid(this.rows, this.columns);
+    const offset = this.getOffset();
     
     const orientation = new Sup.Math.Quaternion();
   
@@ -67,7 +87,10 @@ class GridBehavior extends Sup.Behavior {
       for (let x = 0; x < this.grid[y].length; x++) {
         let actors: Sup.Actor[] = Sup.appendScene("Grid/CellPrefab");
         
-        actors[0].setPosition(x * this.cellSize, y * this.cellSize, 0);
+        const _x = (x * this.cellSize) + offset.x;
+        const _y = (y * this.cellSize) + offset.y;
+        
+        actors[0].setPosition(_x, _y, 0);
         
         const rot = orientation.setFromYawPitchRoll(0, 0, Math.atan2(Sup.Math.Random.integer(-100, 100), Sup.Math.Random.integer(-100, 100)));
         actors[0].setOrientation(orientation);
@@ -75,7 +98,7 @@ class GridBehavior extends Sup.Behavior {
         const scale = Sup.Math.Random.float(1, 1.5);
         actors[0].setLocalScale(scale, scale, 1);
         
-        actors[0].arcadeBody2D.warpPosition(x * this.cellSize, y * this.cellSize);
+        actors[0].arcadeBody2D.warpPosition(_x, _y);
         
         let cellBehavior = actors[0].getBehavior(CellBehavior);
         cellBehavior.gridY = y;

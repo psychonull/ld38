@@ -1,6 +1,6 @@
 class GenerationBehavior extends Sup.Behavior {
   fontActor: Sup.Actor = null;
-  font = "Menus/Base Font";
+  font = "Menus/GameTitleFont";
   generations = "Generation: "
   awake() {}
 
@@ -12,7 +12,7 @@ class GenerationBehavior extends Sup.Behavior {
     
     let finalValue = this.generations + value;
     this.fontActor = new Sup.Actor("GenerationText", this.actor);
-    new Sup.TextRenderer(this.fontActor, finalValue, this.font,{size: 20});
+    new Sup.TextRenderer(this.fontActor, finalValue, this.font,{size: 30});
     this.fontActor.setLocalPosition(0,0,0);
   }
 }

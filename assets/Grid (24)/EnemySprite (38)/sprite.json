@@ -31,7 +31,7 @@
       "name": "Growing",
       "startFrameIndex": 6,
       "endFrameIndex": 9,
-      "speed": 1
+      "speed": 2
     },
     {
       "id": "0",
@@ -45,7 +45,7 @@
       "name": "GrowingBack",
       "startFrameIndex": 10,
       "endFrameIndex": 13,
-      "speed": 1
+      "speed": 2
     },
     {
       "id": "2",
