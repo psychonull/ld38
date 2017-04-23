@@ -110,6 +110,18 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "PlayerCollisionBehavior": {
+      "scriptId": "47",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "CameraHudBehavior": {
+      "scriptId": "48",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

@@ -9,7 +9,7 @@ class GridBehavior extends Sup.Behavior {
   private tickGeneration: Function;
   
   setInitAlive() {
-    for (let i=0; i<30; i++){
+    for (let i=0; i<50; i++){
       const rndY = Sup.Math.Random.integer(0, this.rows-1);
       const rndX = Sup.Math.Random.integer(0, this.columns-1);
       this.grid[rndY][rndX] = Grid.CellState.Alive;

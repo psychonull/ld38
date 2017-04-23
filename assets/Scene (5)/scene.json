@@ -2,6 +2,55 @@
   "formatVersion": 1,
   "nodes": [
     {
+      "id": "13",
+      "name": "HUD",
+      "children": [],
+      "components": [
+        {
+          "type": "TextRenderer",
+          "config": {
+            "formatVersion": 2,
+            "fontAssetId": "6",
+            "text": "Text",
+            "alignment": "center",
+            "verticalAlignment": "center",
+            "size": null,
+            "color": null,
+            "overrideOpacity": false,
+            "opacity": null
+          },
+          "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "CameraHudBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
+        }
+      ],
+      "position": {
+        "x": -2.0901751440760563e-9,
+        "y": -2.679387331008911,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
       "id": "0",
       "name": "Camera",
       "children": [],
@@ -68,7 +117,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "35",
-                "animationId": null,
+                "animationId": "0",
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -141,6 +190,14 @@
             "propertyValues": {}
           },
           "id": "2"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "PlayerCollisionBehavior",
+            "propertyValues": {}
+          },
+          "id": "3"
         }
       ],
       "position": {

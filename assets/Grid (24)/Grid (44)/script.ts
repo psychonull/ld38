@@ -1,7 +1,7 @@
 module Grid {
   
   export enum CellState {
-    Empty = 0,
+    Empty = -1,
     Dead = 0,
     Alive = 1
   };
@@ -13,10 +13,6 @@ module Grid {
       newGrid[y] = [];
       for (let x = 0; x < cols; x++) {
         newGrid[y][x] = CellState.Empty;
-
-        if(y < 2){
-          newGrid[y][x] = CellState.Alive;
-        }
       }
     }
 
@@ -46,7 +42,8 @@ module Grid {
 
     let newValue = value;
     if (alives < 2 || alives > 3) {
-      newValue = CellState.Dead;
+      if (value === CellState.Dead || value === CellState.Alive) newValue = CellState.Dead;
+      else newValue = CellState.Empty;
     }
     else if (alives === 3) {
       newValue = CellState.Alive;
