@@ -41,11 +41,13 @@ module Grid {
     const alives = countAlives(grid, x, y);
 
     let newValue = value;
-    if (alives < 2 || alives > 3) {
+    // if (alives < 2 || alives > 3) {
+    if (alives < 2 || alives > 4) {
       if (value === CellState.Dead || value === CellState.Alive) newValue = CellState.Dead;
       else newValue = CellState.Empty;
     }
-    else if (alives === 3) {
+    // else if (alives === 3) {
+    else if (alives === 3 || alives === 4) {
       newValue = CellState.Alive;
     }
 

@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 53,
+  "nextEntryId": 59,
   "nodes": [
     {
       "id": "5",
@@ -34,6 +34,55 @@
         {
           "id": "4",
           "name": "Main Menu Behavior",
+          "type": "script"
+        },
+        {
+          "id": "54",
+          "name": "GameOver",
+          "type": "scene"
+        },
+        {
+          "id": "55",
+          "name": "Game Over Behavior",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "HUD",
+      "type": null,
+      "children": [
+        {
+          "id": "34",
+          "name": "HudPrefab",
+          "type": "scene"
+        },
+        {
+          "id": "39",
+          "name": "HudBehavior",
+          "type": "script"
+        },
+        {
+          "id": "48",
+          "name": "CameraHub",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "name": "PowerUps",
+      "type": null,
+      "children": [
+        {
+          "id": "57",
+          "name": "GenericPowerUpSprite",
+          "type": "sprite"
+        },
+        {
+          "id": "58",
+          "name": "PowerUpGenerator",
           "type": "script"
         }
       ]
@@ -103,28 +152,6 @@
       ]
     },
     {
-      "id": "10",
-      "name": "HUD",
-      "type": null,
-      "children": [
-        {
-          "id": "34",
-          "name": "HudPrefab",
-          "type": "scene"
-        },
-        {
-          "id": "39",
-          "name": "HudBehavior",
-          "type": "script"
-        },
-        {
-          "id": "48",
-          "name": "Camera",
-          "type": "script"
-        }
-      ]
-    },
-    {
       "id": "24",
       "name": "Grid",
       "type": null,
@@ -140,6 +167,11 @@
           "type": "script"
         },
         {
+          "id": "36",
+          "name": "CellBehavior",
+          "type": "script"
+        },
+        {
           "id": "25",
           "name": "GridPrefab",
           "type": "scene"
@@ -150,23 +182,18 @@
           "type": "scene"
         },
         {
-          "id": "36",
-          "name": "CellBehavior",
-          "type": "script"
-        },
-        {
           "id": "38",
           "name": "EnemySprite",
           "type": "sprite"
         },
         {
           "id": "50",
-          "name": "BorderH",
+          "name": "BorderV",
           "type": "sprite"
         },
         {
           "id": "52",
-          "name": "BorderV",
+          "name": "BorderH",
           "type": "sprite"
         }
       ]

@@ -12,7 +12,7 @@
             "formatVersion": 1,
             "mode": "orthographic",
             "fov": 45,
-            "orthographicScale": 45,
+            "orthographicScale": 20,
             "viewport": {
               "x": 0,
               "y": 0,
@@ -179,7 +179,12 @@
           "type": "Behavior",
           "config": {
             "behaviorName": "SimpleShootBehavior",
-            "propertyValues": {}
+            "propertyValues": {
+              "quantity": {
+                "type": "number",
+                "value": 40
+              }
+            }
           },
           "id": "2"
         },
@@ -196,248 +201,6 @@
         "x": 0,
         "y": 0,
         "z": 0
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "14",
-      "name": "LeftBorder",
-      "children": [],
-      "components": [
-        {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "50",
-            "animationId": null,
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
-          },
-          "id": "0"
-        },
-        {
-          "type": "ArcadeBody2D",
-          "config": {
-            "formatVersion": 2,
-            "type": "box",
-            "movable": true,
-            "width": 1,
-            "height": 1,
-            "offset": {
-              "x": 0,
-              "y": 0
-            },
-            "bounce": {
-              "x": 0,
-              "y": 0
-            },
-            "tileMapAssetId": null,
-            "tileSetPropertyName": null,
-            "layersIndex": null
-          },
-          "id": "1"
-        }
-      ],
-      "position": {
-        "x": -1,
-        "y": 0,
-        "z": 5
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 10,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "15",
-      "name": "RightBorder",
-      "children": [],
-      "components": [
-        {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "50",
-            "animationId": null,
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
-          },
-          "id": "0"
-        },
-        {
-          "type": "ArcadeBody2D",
-          "config": {
-            "formatVersion": 2,
-            "type": "box",
-            "movable": true,
-            "width": 1,
-            "height": 1,
-            "offset": {
-              "x": 0,
-              "y": 0
-            },
-            "bounce": {
-              "x": 0,
-              "y": 0
-            },
-            "tileMapAssetId": null,
-            "tileSetPropertyName": null,
-            "layersIndex": null
-          },
-          "id": "1"
-        }
-      ],
-      "position": {
-        "x": 16,
-        "y": 0,
-        "z": 5
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "18",
-      "name": "TopBorder",
-      "children": [],
-      "components": [
-        {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "52",
-            "animationId": null,
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 11,
-        "z": 5
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "19",
-      "name": "BottomBorder",
-      "children": [],
-      "components": [
-        {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "52",
-            "animationId": null,
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
-          },
-          "id": "0"
-        },
-        {
-          "type": "ArcadeBody2D",
-          "config": {
-            "formatVersion": 2,
-            "type": "box",
-            "movable": true,
-            "width": 1,
-            "height": 1,
-            "offset": {
-              "x": 0,
-              "y": 0
-            },
-            "bounce": {
-              "x": 0,
-              "y": 0
-            },
-            "tileMapAssetId": null,
-            "tileSetPropertyName": null,
-            "layersIndex": null
-          },
-          "id": "1"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": -1,
-        "z": 5
       },
       "orientation": {
         "x": 0,

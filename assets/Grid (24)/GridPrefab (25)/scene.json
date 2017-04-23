@@ -13,19 +13,27 @@
             "propertyValues": {
               "rows": {
                 "type": "number",
-                "value": 10
+                "value": 30
               },
               "columns": {
                 "type": "number",
-                "value": 15
+                "value": 30
               },
               "cellSize": {
                 "type": "number",
-                "value": 1.72
+                "value": 1.1
               },
               "generateEvery": {
                 "type": "number",
-                "value": 3
+                "value": 2
+              },
+              "maxCellsRandom": {
+                "type": "number",
+                "value": 30
+              },
+              "maxArea": {
+                "type": "number",
+                "value": 6
               }
             }
           },

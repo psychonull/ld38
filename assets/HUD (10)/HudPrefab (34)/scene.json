@@ -6,109 +6,22 @@
       "name": "Hud Content",
       "children": [
         {
-          "id": "6",
-          "name": "HudCamera",
-          "children": [
-            {
-              "id": "1",
-              "name": "Generation",
-              "children": [],
-              "components": [
-                {
-                  "type": "TextRenderer",
-                  "config": {
-                    "formatVersion": 2,
-                    "fontAssetId": "6",
-                    "text": "Generation:",
-                    "alignment": "center",
-                    "verticalAlignment": "center",
-                    "size": 40,
-                    "color": "ffffff",
-                    "overrideOpacity": false,
-                    "opacity": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": -5,
-                "y": 0,
-                "z": 2
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            },
-            {
-              "id": "4",
-              "name": "GenerationValue",
-              "children": [],
-              "components": [
-                {
-                  "type": "TextRenderer",
-                  "config": {
-                    "formatVersion": 2,
-                    "fontAssetId": "6",
-                    "text": "1",
-                    "alignment": "center",
-                    "verticalAlignment": "center",
-                    "size": 40,
-                    "color": null,
-                    "overrideOpacity": false,
-                    "opacity": null
-                  },
-                  "id": "0"
-                }
-              ],
-              "position": {
-                "x": 0.7108588814735413,
-                "y": -0.2734045684337616,
-                "z": 0
-              },
-              "orientation": {
-                "x": 0,
-                "y": 0,
-                "z": 0,
-                "w": 1
-              },
-              "scale": {
-                "x": 1,
-                "y": 1,
-                "z": 1
-              },
-              "visible": true,
-              "layer": 0,
-              "prefab": null
-            }
-          ],
+          "id": "1",
+          "name": "Generation",
+          "children": [],
           "components": [
             {
-              "type": "Camera",
+              "type": "TextRenderer",
               "config": {
-                "formatVersion": 1,
-                "mode": "orthographic",
-                "fov": 45,
-                "orthographicScale": 10,
-                "viewport": {
-                  "x": 0,
-                  "y": 0,
-                  "width": 1,
-                  "height": 1
-                },
-                "depth": 0,
-                "nearClippingPlane": 0.1,
-                "farClippingPlane": 1000
+                "formatVersion": 2,
+                "fontAssetId": "6",
+                "text": "Generation:",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 15,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
               },
               "id": "0"
             }
@@ -132,21 +45,55 @@
           "visible": true,
           "layer": 0,
           "prefab": null
+        },
+        {
+          "id": "4",
+          "name": "GenerationValue",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "HudBehavior",
+                "propertyValues": {}
+              },
+              "id": "1"
+            }
+          ],
+          "position": {
+            "x": 2.31923770904541,
+            "y": -0.08201917260885239,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
         }
       ],
       "components": [
         {
           "type": "Behavior",
           "config": {
-            "behaviorName": "HudBehavior",
+            "behaviorName": "CameraHudBehavior",
             "propertyValues": {}
           },
-          "id": "0"
+          "id": "9"
         }
       ],
       "position": {
-        "x": 0,
-        "y": 0,
+        "x": -5.026717662811279,
+        "y": 0.19657550752162933,
         "z": 0
       },
       "orientation": {

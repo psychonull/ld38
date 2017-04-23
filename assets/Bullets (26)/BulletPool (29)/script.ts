@@ -1,11 +1,12 @@
 class BulletPool {
   
-  static SIZE= 20;
+  size: number = 20;
   
   bullets: Sup.Actor[] = [];
 
-  constructor() {
-     for(let i = 0; i < BulletPool.SIZE; i++) {
+  constructor(size = 20) {
+    this.size = size;
+     for(let i = 0; i < this.size; i++) {
        let actor =  Sup.appendScene(Sup.get("Bullets/BasicBulletPrefab", Sup.Scene))[0];
        this.bullets.push(actor);
      }

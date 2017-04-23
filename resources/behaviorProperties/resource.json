@@ -55,6 +55,14 @@
         {
           "name": "generateEvery",
           "type": "number"
+        },
+        {
+          "name": "maxCellsRandom",
+          "type": "number"
+        },
+        {
+          "name": "maxArea",
+          "type": "number"
         }
       ]
     },
@@ -118,7 +126,12 @@
       "scriptId": "39",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "font",
+          "type": "string"
+        }
+      ]
     },
     "PlayerCollisionBehavior": {
       "scriptId": "47",
@@ -132,7 +145,7 @@
       "parentBehavior": null,
       "properties": []
     },
-    "TripleShootBehavior": {
+    "MultipleShootBehavior": {
       "scriptId": "51",
       "line": 0,
       "parentBehavior": null,
@@ -140,8 +153,24 @@
         {
           "name": "quantity",
           "type": "number"
+        },
+        {
+          "name": "timeThrottle",
+          "type": "number"
         }
       ]
+    },
+    "GameOverBehavior": {
+      "scriptId": "55",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "PowerUpGeneratorBehavior": {
+      "scriptId": "58",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
     }
   }
 }

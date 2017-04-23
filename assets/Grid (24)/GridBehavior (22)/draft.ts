@@ -37,7 +37,8 @@ class GridBehavior extends Sup.Behavior {
     new Sup.SpriteRenderer(leftBorder, "Grid/BorderV");
     leftBorder.setLocalScaleY(this.columns*(this.cellSize+1));
     leftBorder.setPosition(-1, this.rows/2+this.cellSize, 0);
-
+    leftBorderarcadeBody2D.warpPosition(x * this.cellSize, y * this.cellSize);
+    
     new Sup.SpriteRenderer(rightBorder, "Grid/BorderV");
     rightBorder.setLocalScaleY(this.columns*(this.cellSize+1));
     rightBorder.setPosition(this.columns+this.cellSize*2, this.rows/2+this.cellSize, 0);

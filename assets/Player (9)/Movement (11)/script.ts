@@ -5,7 +5,7 @@ class MovementBehavior extends Sup.Behavior {
   targetAngle = 0;
   moveSpeed = 0;
   
-  static maxMoveSpeed = 0.1;
+  static maxMoveSpeed = 0.3;
   
   modelActor:Sup.Actor;
   orientation = new Sup.Math.Quaternion();
