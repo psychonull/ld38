@@ -23,4 +23,11 @@ module Utils {
     }
   }
   
+  export function getRandomPosition(from, to) {
+    return {
+      y: Sup.Math.Random.integer(from.y, to.y), 
+      x: Sup.Math.Random.integer(from.x, to.x)
+    };
+  }
+  
 }

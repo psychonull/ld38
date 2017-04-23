@@ -18,6 +18,9 @@ class MovementBehavior extends Sup.Behavior {
   update() {
     this.checkMovement();
     this.checkPointing();
+    if(Sup.Input.wasKeyJustPressed("M")){ //TODO: REMOVE THIS
+      Game.showTitleScren();
+    }
   }
   
   checkMovement() {

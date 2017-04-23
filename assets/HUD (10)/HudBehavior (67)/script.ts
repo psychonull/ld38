@@ -8,8 +8,9 @@ class HubBehavior extends Sup.Behavior {
     Sup.log(this.grid);
   }
   
-  update() {    
-    this.actor.getChild("GenerationValue").getBehavior(GenerationBehavior).setGeneration(this.grid.getBehavior(GridBehavior).getGenerationNumber());
+  update() {
+    let stats = this.grid.getBehavior(GridBehavior).getStats();
+    this.actor.getChild("GenerationValue").getBehavior(GenerationBehavior).setGeneration(stats.generation);
   }
 }
 Sup.registerBehavior(HubBehavior);

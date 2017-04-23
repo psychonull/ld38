@@ -61,8 +61,8 @@
             }
           ],
           "position": {
-            "x": 2.31923770904541,
-            "y": -0.08201917260885239,
+            "x": 2.262033700942993,
+            "y": -0.08201969414949417,
             "z": 0
           },
           "orientation": {
@@ -85,14 +85,6 @@
         {
           "type": "Behavior",
           "config": {
-            "behaviorName": "CameraHudBehavior",
-            "propertyValues": {}
-          },
-          "id": "11"
-        },
-        {
-          "type": "Behavior",
-          "config": {
             "behaviorName": "HubBehavior",
             "propertyValues": {}
           },
@@ -100,8 +92,8 @@
         }
       ],
       "position": {
-        "x": -5.026717662811279,
-        "y": 0.19657550752162933,
+        "x": 0,
+        "y": 0,
         "z": 0
       },
       "orientation": {

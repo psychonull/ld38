@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 69,
+  "nextEntryId": 70,
   "nodes": [
     {
       "id": "5",
@@ -45,6 +45,11 @@
           "id": "55",
           "name": "Game Over Behavior",
           "type": "script"
+        },
+        {
+          "id": "69",
+          "name": "GameTitleFont",
+          "type": "font"
         }
       ]
     },

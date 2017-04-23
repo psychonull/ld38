@@ -4,7 +4,7 @@ class CameraHudBehavior extends Sup.Behavior {
 
   update() {
     let camera = Sup.getActor("Camera");
-    this.actor.setPosition( camera.getX(), camera.getY());
+    this.actor.setPosition( camera.getX() , camera.getY());
   }
 }
 Sup.registerBehavior(CameraHudBehavior);

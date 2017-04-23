@@ -14,11 +14,11 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "6",
-                "text": "Ludum Dare 38",
+                "fontAssetId": "69",
+                "text": "Game: the game",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 30,
+                "size": 60,
                 "color": "ffffff",
                 "overrideOpacity": false,
                 "opacity": null
@@ -55,11 +55,11 @@
               "type": "TextRenderer",
               "config": {
                 "formatVersion": 2,
-                "fontAssetId": "6",
-                "text": "Press <<space>> to continue",
+                "fontAssetId": "69",
+                "text": "Press SPACE to start\nWASD/Arrows to move\nPoint and click to shoot evil shit",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 24,
+                "size": 42,
                 "color": "fCfCfC",
                 "overrideOpacity": false,
                 "opacity": null
@@ -68,8 +68,8 @@
             }
           ],
           "position": {
-            "x": -0.114,
-            "y": -1.255,
+            "x": 0.19840319454669952,
+            "y": -3.797376871109009,
             "z": 0
           },
           "orientation": {
@@ -82,6 +82,136 @@
             "x": 0.5,
             "y": 0.5,
             "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "5",
+          "name": "Camera",
+          "children": [],
+          "components": [
+            {
+              "type": "Camera",
+              "config": {
+                "formatVersion": 1,
+                "mode": "perspective",
+                "fov": 45,
+                "orthographicScale": 10,
+                "viewport": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 1,
+                  "height": 1
+                },
+                "depth": 0,
+                "nearClippingPlane": 0.1,
+                "farClippingPlane": 1000
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 15
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "6",
+          "name": "GameModeLabel",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "69",
+                "text": "<<  Game mode:  Normal >>",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 32,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0.032,
+            "y": -2,
+            "z": 3
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "7",
+          "name": "FlyingShit",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "35",
+                "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 3,
+            "z": -1
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 4,
+            "y": 4,
+            "z": 4
           },
           "visible": true,
           "layer": 0,

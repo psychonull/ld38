@@ -57,6 +57,10 @@
           "type": "number"
         },
         {
+          "name": "spawnersAmount",
+          "type": "number"
+        },
+        {
           "name": "maxCellsRandom",
           "type": "number"
         },
@@ -174,10 +178,6 @@
       "line": 0,
       "parentBehavior": null,
       "properties": [
-        {
-          "name": "spawnEvery",
-          "type": "number"
-        },
         {
           "name": "isActive",
           "type": "boolean"

@@ -8,6 +8,7 @@ class PlayerCollisionBehavior extends Sup.Behavior {
 
   update() {
     this.checkEnemyCollision();
+    this.checkBorderCollisions();
   }
   
    checkEnemyCollision(){
@@ -25,6 +26,17 @@ class PlayerCollisionBehavior extends Sup.Behavior {
         Sup.loadScene("Menus/GameOver");
       }
     });
+  }
+  
+  checkBorderCollisions(){
+    if(!this.gridBehavior && Sup.getActor("GridBehavior")){
+      this.gridBehavior = Sup.getActor("GridBehavior").getBehavior(GridBehavior);
+    }
+    if(!this.gridBehavior){
+      return;
+    }
+        
+    Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, this.gridBehavior.borders);
   }
 }
 Sup.registerBehavior(PlayerCollisionBehavior);

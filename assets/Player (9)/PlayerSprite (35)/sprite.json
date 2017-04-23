@@ -6,13 +6,13 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 72,
-  "framesPerSecond": 4,
+  "framesPerSecond": 6,
   "opacity": 1,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 128,
-    "height": 128
+    "width": 64,
+    "height": 64
   },
   "origin": {
     "x": 0.5,
@@ -22,14 +22,14 @@
     {
       "id": "0",
       "name": "iddle",
-      "startFrameIndex": 0,
-      "endFrameIndex": 2,
-      "speed": 0.3
+      "startFrameIndex": 6,
+      "endFrameIndex": 11,
+      "speed": 0.6
     },
     {
       "id": "1",
       "name": "walk",
-      "startFrameIndex": 3,
+      "startFrameIndex": 0,
       "endFrameIndex": 5,
       "speed": 1
     }

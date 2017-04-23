@@ -2,7 +2,9 @@
   "formatVersion": 1,
   "startupSceneId": null,
   "framesPerSecond": 60,
-  "ratioNumerator": null,
-  "ratioDenominator": null,
-  "customLayers": []
+  "ratioNumerator": 16,
+  "ratioDenominator": 9,
+  "customLayers": [
+    "HUD"
+  ]
 }

@@ -3,16 +3,16 @@
   "maps": [
     "map"
   ],
-  "filtering": "pixelated",
+  "filtering": "smooth",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 72,
-  "framesPerSecond": 2,
-  "opacity": null,
+  "framesPerSecond": 5,
+  "opacity": 1,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 256,
-    "height": 256
+    "width": 64,
+    "height": 64
   },
   "origin": {
     "x": 0.5,
@@ -23,22 +23,36 @@
       "id": "0",
       "name": "Alive",
       "startFrameIndex": 0,
-      "endFrameIndex": 2,
-      "speed": 6
+      "endFrameIndex": 5,
+      "speed": 1
     },
     {
       "id": "1",
       "name": "Dead",
-      "startFrameIndex": 3,
-      "endFrameIndex": 3,
+      "startFrameIndex": 13,
+      "endFrameIndex": 13,
       "speed": 1
     },
     {
       "id": "2",
       "name": "Empty",
-      "startFrameIndex": 4,
-      "endFrameIndex": 4,
+      "startFrameIndex": 14,
+      "endFrameIndex": 14,
       "speed": 1
+    },
+    {
+      "id": "3",
+      "name": "Growing",
+      "startFrameIndex": 6,
+      "endFrameIndex": 9,
+      "speed": 1
+    },
+    {
+      "id": "4",
+      "name": "Dying",
+      "startFrameIndex": 10,
+      "endFrameIndex": 12,
+      "speed": 1.2
     }
   ],
   "mapSlots": {
