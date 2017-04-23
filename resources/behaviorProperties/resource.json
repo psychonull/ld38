@@ -103,7 +103,16 @@
       "scriptId": "36",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "rowAt",
+          "type": "number"
+        },
+        {
+          "name": "columnAt",
+          "type": "number"
+        }
+      ]
     },
     "HudBehavior": {
       "scriptId": "39",
@@ -122,6 +131,17 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "TripleShootBehavior": {
+      "scriptId": "51",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "quantity",
+          "type": "number"
+        }
+      ]
     }
   }
 }

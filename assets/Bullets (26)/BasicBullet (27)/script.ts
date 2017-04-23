@@ -38,12 +38,25 @@ class BasicBulletBehavior extends Sup.Behavior {
       this.justShot = false;
     }
     this.checkDistance(); 
+    this.checkEnemyCollision();
   }
   
   checkDistance() {
     if(this.position.distanceTo(this.actor.getPosition()) > this.maxDistance) {
       this.collide();
     }  
+  }
+  
+  checkEnemyCollision(){
+    var gridBehavior = Sup.getActor("GridBehavior").getBehavior(GridBehavior);
+    let aliveCells = gridBehavior.getAliveCells();
+    
+    aliveCells.forEach(cell => {
+      if(Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, cell.arcadeBody2D)) {
+        this.collide();
+        gridBehavior.killCell(cell);
+      }
+    });
   }
   
   collide() {

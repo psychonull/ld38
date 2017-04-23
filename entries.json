@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 49,
+  "nextEntryId": 53,
   "nodes": [
     {
       "id": "5",
@@ -94,6 +94,11 @@
           "id": "47",
           "name": "PlayerCollision",
           "type": "script"
+        },
+        {
+          "id": "51",
+          "name": "Multiple Shoot",
+          "type": "script"
         }
       ]
     },
@@ -152,6 +157,16 @@
         {
           "id": "38",
           "name": "EnemySprite",
+          "type": "sprite"
+        },
+        {
+          "id": "50",
+          "name": "BorderH",
+          "type": "sprite"
+        },
+        {
+          "id": "52",
+          "name": "BorderV",
           "type": "sprite"
         }
       ]

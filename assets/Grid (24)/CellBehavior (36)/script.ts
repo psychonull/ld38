@@ -1,4 +1,8 @@
 class CellBehavior extends Sup.Behavior {
+  
+  gridX: number;
+  gridY: number;
+  
   awake() {
       
   }
