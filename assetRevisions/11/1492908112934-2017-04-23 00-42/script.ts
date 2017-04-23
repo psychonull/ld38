@@ -11,8 +11,7 @@ class MovementBehavior extends Sup.Behavior {
   orientation = new Sup.Math.Quaternion();
   
   awake() {
-    this.modelActor = this.actor.getChild("PlayerSprite");  
-    this.modelActor.spriteRenderer.setAnimation("iddle");
+    this.modelActor = this.actor.getChild("Player Model");  
   }
 
   update() {
@@ -28,14 +27,12 @@ class MovementBehavior extends Sup.Behavior {
       this.isMoving = true;
     }
     else {
-      this.modelActor.spriteRenderer.setAnimation("iddle");
       return this.actor.arcadeBody2D.setVelocity(0, 0);
     }
     
     let velocity = this.actor.arcadeBody2D.getVelocity();
     
     if(this.isMoving) {
-      this.modelActor.spriteRenderer.setAnimation("walk");
       this.moveSpeed = Sup.Math.lerp(this.moveSpeed, MovementBehavior.maxMoveSpeed, 0.1);
       velocity.set(Math.cos(this.targetAngle) * this.moveSpeed, Math.sin(this.targetAngle) * this.moveSpeed);
     }

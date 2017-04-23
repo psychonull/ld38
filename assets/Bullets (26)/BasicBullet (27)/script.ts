@@ -1,0 +1,54 @@
+class BasicBulletBehavior extends Sup.Behavior {
+  
+  //TODO - HOW DO WE HANDLE ALIVE STATUS
+  
+  moveSpeed = 1;
+  
+  angle = 0;
+  powa = 10;
+  position = new Sup.Math.Vector3();
+  alive = false;
+  maxDistance = 10;
+  
+  justShot = false;
+  
+  awake() {
+
+  }
+  
+  shoot(fromPosition: Sup.Math.Vector3, angle: number){
+    this.position = fromPosition;
+    this.position.z = 1;
+    this.angle = angle;
+    this.alive = true;
+    this.actor.setVisible(true);
+    
+    this.justShot = true;
+  }
+
+  update() {
+    if(!this.alive){
+      return;
+    }
+    if(this.justShot){ //TODO: Why can't I just call shoot() and set pos there?
+      //this.moveSpeed = Sup.Math.lerp(this.moveSpeed, this.maxMoveSpeed, 0.1);
+      this.actor.arcadeBody2D.warpPosition(this.position.x, this.position.y);
+      this.actor.arcadeBody2D.setVelocity(Math.cos(this.angle) * this.moveSpeed, Math.sin(this.angle) * this.moveSpeed);
+      this.actor.setPosition(this.position);
+      this.justShot = false;
+    }
+    this.checkDistance(); 
+  }
+  
+  checkDistance() {
+    if(this.position.distanceTo(this.actor.getPosition()) > this.maxDistance) {
+      this.collide();
+    }  
+  }
+  
+  collide() {
+    this.alive = false;
+    this.actor.setVisible(false);
+  }
+}
+Sup.registerBehavior(BasicBulletBehavior);

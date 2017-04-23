@@ -12,7 +12,7 @@
             "formatVersion": 1,
             "mode": "orthographic",
             "fov": 45,
-            "orthographicScale": 15,
+            "orthographicScale": 45,
             "viewport": {
               "x": 0,
               "y": 0,
@@ -24,6 +24,14 @@
             "farClippingPlane": 1000
           },
           "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "CameraBehavior",
+            "propertyValues": {}
+          },
+          "id": "1"
         }
       ],
       "position": {
@@ -51,23 +59,25 @@
       "name": "Player",
       "children": [
         {
-          "id": "3",
-          "name": "Player model",
+          "id": "6",
+          "name": "PlayerSprite",
           "children": [],
           "components": [
             {
-              "type": "ModelRenderer",
+              "type": "SpriteRenderer",
               "config": {
                 "formatVersion": 1,
-                "modelAssetId": "16",
+                "spriteAssetId": "35",
                 "animationId": null,
+                "horizontalFlip": false,
+                "verticalFlip": false,
                 "castShadow": false,
                 "receiveShadow": false,
                 "color": "ffffff",
                 "overrideOpacity": false,
                 "opacity": null,
                 "materialType": "basic",
-                "shaderAssetId": null
+                "shaderAssetId": "43"
               },
               "id": "0"
             }
@@ -78,10 +88,10 @@
             "z": 0
           },
           "orientation": {
-            "x": 0.7071067811865475,
+            "x": 0,
             "y": 0,
             "z": 0,
-            "w": 0.7071067811865476
+            "w": 1
           },
           "scale": {
             "x": 1,
@@ -108,8 +118,8 @@
             "formatVersion": 2,
             "type": "box",
             "movable": true,
-            "width": 1,
-            "height": 1,
+            "width": 1.72,
+            "height": 1.72,
             "offset": {
               "x": 0,
               "y": 0

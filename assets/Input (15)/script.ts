@@ -35,6 +35,6 @@ module Input {
     return angle; 
   }
   export function shootBtn():boolean {
-    return Sup.Input.wasMouseButtonJustPressed(0);
+    return Sup.Input.isMouseButtonDown(0);
   }
 }

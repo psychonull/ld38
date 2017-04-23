@@ -39,6 +39,76 @@
       "scriptId": "22",
       "line": 0,
       "parentBehavior": null,
+      "properties": [
+        {
+          "name": "rows",
+          "type": "number"
+        },
+        {
+          "name": "columns",
+          "type": "number"
+        },
+        {
+          "name": "cellSize",
+          "type": "number"
+        },
+        {
+          "name": "generateEvery",
+          "type": "number"
+        }
+      ]
+    },
+    "BasicBulletBehavior": {
+      "scriptId": "27",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "moveSpeed",
+          "type": "number"
+        },
+        {
+          "name": "angle",
+          "type": "number"
+        },
+        {
+          "name": "powa",
+          "type": "number"
+        },
+        {
+          "name": "position",
+          "type": "Sup.Math.Vector3"
+        },
+        {
+          "name": "alive",
+          "type": "boolean"
+        },
+        {
+          "name": "maxDistance",
+          "type": "number"
+        },
+        {
+          "name": "justShot",
+          "type": "boolean"
+        }
+      ]
+    },
+    "CameraBehavior": {
+      "scriptId": "30",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "CellBehavior": {
+      "scriptId": "36",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "HudBehavior": {
+      "scriptId": "39",
+      "line": 0,
+      "parentBehavior": null,
       "properties": []
     }
   }

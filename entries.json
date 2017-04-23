@@ -1,10 +1,15 @@
 {
-  "nextEntryId": 26,
+  "nextEntryId": 47,
   "nodes": [
     {
       "id": "5",
       "name": "Scene",
       "type": "scene"
+    },
+    {
+      "id": "40",
+      "name": "Utils",
+      "type": "script"
     },
     {
       "id": "15",
@@ -34,6 +39,33 @@
       ]
     },
     {
+      "id": "26",
+      "name": "Bullets",
+      "type": null,
+      "children": [
+        {
+          "id": "27",
+          "name": "BasicBullet",
+          "type": "script"
+        },
+        {
+          "id": "28",
+          "name": "BasicSprite",
+          "type": "sprite"
+        },
+        {
+          "id": "29",
+          "name": "BulletPool",
+          "type": "script"
+        },
+        {
+          "id": "32",
+          "name": "BasicBulletPrefab",
+          "type": "scene"
+        }
+      ]
+    },
+    {
       "id": "9",
       "name": "Player",
       "type": null,
@@ -49,9 +81,14 @@
           "type": "script"
         },
         {
-          "id": "16",
-          "name": "Player model",
-          "type": "model"
+          "id": "30",
+          "name": "Camera",
+          "type": "script"
+        },
+        {
+          "id": "35",
+          "name": "PlayerSprite",
+          "type": "sprite"
         }
       ]
     },
@@ -59,7 +96,18 @@
       "id": "10",
       "name": "HUD",
       "type": null,
-      "children": []
+      "children": [
+        {
+          "id": "34",
+          "name": "HudPrefab",
+          "type": "scene"
+        },
+        {
+          "id": "39",
+          "name": "HudBehavior",
+          "type": "script"
+        }
+      ]
     },
     {
       "id": "24",
@@ -67,19 +115,46 @@
       "type": null,
       "children": [
         {
-          "id": "25",
+          "id": "44",
           "name": "Grid",
-          "type": "scene"
-        },
-        {
-          "id": "23",
-          "name": "Cell",
-          "type": "sprite"
+          "type": "script"
         },
         {
           "id": "22",
           "name": "GridBehavior",
           "type": "script"
+        },
+        {
+          "id": "25",
+          "name": "GridPrefab",
+          "type": "scene"
+        },
+        {
+          "id": "31",
+          "name": "CellPrefab",
+          "type": "scene"
+        },
+        {
+          "id": "36",
+          "name": "CellBehavior",
+          "type": "script"
+        },
+        {
+          "id": "38",
+          "name": "EnemySprite",
+          "type": "sprite"
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "name": "Shaders",
+      "type": null,
+      "children": [
+        {
+          "id": "43",
+          "name": "JellyShader",
+          "type": "shader"
         }
       ]
     },
@@ -87,16 +162,6 @@
       "id": "1",
       "name": "Manager",
       "type": "script"
-    },
-    {
-      "id": "12",
-      "name": "3D Model",
-      "type": "model"
-    },
-    {
-      "id": "18",
-      "name": "bicho",
-      "type": "model"
     }
   ]
 }
