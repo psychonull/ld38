@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 59,
+  "nextEntryId": 69,
   "nodes": [
     {
       "id": "5",
@@ -54,19 +54,24 @@
       "type": null,
       "children": [
         {
-          "id": "34",
-          "name": "HudPrefab",
-          "type": "scene"
+          "id": "48",
+          "name": "CameraHub",
+          "type": "script"
         },
         {
-          "id": "39",
+          "id": "67",
           "name": "HudBehavior",
           "type": "script"
         },
         {
-          "id": "48",
-          "name": "CameraHub",
+          "id": "68",
+          "name": "GenerationBehavior",
           "type": "script"
+        },
+        {
+          "id": "34",
+          "name": "HudPrefab",
+          "type": "scene"
         }
       ]
     },
@@ -84,6 +89,16 @@
           "id": "58",
           "name": "PowerUpGenerator",
           "type": "script"
+        },
+        {
+          "id": "59",
+          "name": "PowerUp",
+          "type": "script"
+        },
+        {
+          "id": "66",
+          "name": "PowerUpPrefab",
+          "type": "scene"
         }
       ]
     },
@@ -172,6 +187,11 @@
           "type": "script"
         },
         {
+          "id": "63",
+          "name": "CellSpawnerBehavior",
+          "type": "script"
+        },
+        {
           "id": "25",
           "name": "GridPrefab",
           "type": "scene"
@@ -179,6 +199,11 @@
         {
           "id": "31",
           "name": "CellPrefab",
+          "type": "scene"
+        },
+        {
+          "id": "64",
+          "name": "CellSpawnerPrefab",
           "type": "scene"
         },
         {

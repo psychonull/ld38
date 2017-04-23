@@ -2,8 +2,9 @@ module Grid {
   
   export enum CellState {
     Empty = -1,
-    Dead = 0,
-    Alive = 1
+    Growing = 0,
+    Alive = 1,
+    Dead = 2
   };
 
   export const generateEmptyGrid = (rows: Number, cols: Number) => {
@@ -40,18 +41,22 @@ module Grid {
     let value = grid[y][x];
     const alives = countAlives(grid, x, y);
 
-    let newValue = value;
-    // if (alives < 2 || alives > 3) {
-    if (alives < 2 || alives > 4) {
-      if (value === CellState.Dead || value === CellState.Alive) newValue = CellState.Dead;
-      else newValue = CellState.Empty;
+    if (Sup.Math.Random.integer(0, 2) === 1) {
+      return value;
     }
-    // else if (alives === 3) {
-    else if (alives === 3 || alives === 4) {
-      newValue = CellState.Alive;
+    
+    if (value === CellState.Growing) {
+      return CellState.Alive;
+    }
+    
+    if (value === CellState.Alive && alives < 2 || alives > 4) {
+      return CellState.Growing;
+    }
+    else if (value !== CellState.Alive && (alives === 3 || alives === 4)) {
+      return CellState.Growing;
     }
 
-    return newValue;
+    return value;
   }
 
   export const nextGeneration = grid => {

@@ -15,8 +15,9 @@ class CellBehavior extends Sup.Behavior {
     let animation = '';
     
     switch(nextState) {
+      case Grid.CellState.Growing: animation = 'Dead'; break; 
       case Grid.CellState.Alive: animation = 'Alive'; break; 
-      case Grid.CellState.Dead: animation = 'Dead'; break; 
+      case Grid.CellState.Dead: animation = 'Empty'; break; 
       default: animation = 'Empty';
     }
     

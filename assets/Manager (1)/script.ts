@@ -13,11 +13,11 @@ module Game {
   
   export function showTitleScren() {
     //Sup.appendScene(Sup.get("Menus/MainMenu", Sup.Scene));
-    Sup.appendScene(Sup.get("Grid/GridPrefab", Sup.Scene));
+    let grid = Sup.appendScene(Sup.get("Grid/GridPrefab", Sup.Scene))[0];
     let hud = Sup.appendScene(Sup.get("HUD/HudPrefab", Sup.Scene))[0];
-    hud.getBehavior(HudBehavior).setGeneration(1);
+    hud.getBehavior(HubBehavior).initialize(grid);
   }
-
+  
 }
 
 Game.initialize();

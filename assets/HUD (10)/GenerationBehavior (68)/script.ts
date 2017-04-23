@@ -1,12 +1,8 @@
-class HudBehavior extends Sup.Behavior {
+class GenerationBehavior extends Sup.Behavior {
   font = "Menus/Base Font";
-  awake() {
-    
-  }
+  awake() {}
 
-  update() {
-    
-  }
+  update() {}
   
   setGeneration(value: number){
     let generation = new Sup.Actor("GenerationText", this.actor);
@@ -14,4 +10,4 @@ class HudBehavior extends Sup.Behavior {
     generation.setLocalPosition(0,0);
   }
 }
-Sup.registerBehavior(HudBehavior);
+Sup.registerBehavior(GenerationBehavior);

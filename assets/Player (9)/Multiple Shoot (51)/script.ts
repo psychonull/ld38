@@ -9,12 +9,17 @@ class MultipleShootBehavior extends Sup.Behavior {
   
   throttledShoot: Function;
   
+  shotsAvailable = Infinity;
+  
   awake() {
     this.movementBehavior = this.actor.getBehavior(MovementBehavior);
     this.pool = new BulletPool(this.quantity * 5);
     this.throttledShoot = Utils.throttle(() => {
       var angles = this.getAngles(this.movementBehavior.angle, this.quantity);
       angles.forEach(angle => this.pool.shoot(this.actor.getPosition(), angle));
+      
+      this.shotsAvailable = this.shotsAvailable - 1;
+      
     }, this.timeThrottle);
   }
   
@@ -32,6 +37,9 @@ class MultipleShootBehavior extends Sup.Behavior {
   update() {
     if(Input.shootBtn()) {
       this.throttledShoot();
+      if(this.shotsAvailable <= 0){
+        this.destroy();
+      }
     }
   }
 }

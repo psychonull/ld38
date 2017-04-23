@@ -54,10 +54,10 @@
             {
               "type": "Behavior",
               "config": {
-                "behaviorName": "HudBehavior",
+                "behaviorName": "GenerationBehavior",
                 "propertyValues": {}
               },
-              "id": "1"
+              "id": "4"
             }
           ],
           "position": {
@@ -88,7 +88,15 @@
             "behaviorName": "CameraHudBehavior",
             "propertyValues": {}
           },
-          "id": "9"
+          "id": "11"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "HubBehavior",
+            "propertyValues": {}
+          },
+          "id": "13"
         }
       ],
       "position": {

@@ -13,65 +13,61 @@ class GridBehavior extends Sup.Behavior {
   
   private grid = [];
   private cells = [];
+  private spawners = [];
   private tickGeneration: Function;
+  private tickSpawners: Function;
   
-  setInitAlive() {
-    const maxX = this.columns-1;
-    const maxY = this.rows-1;
-    
-    for (let i=0; i<this.maxCellsRandom; i++){
-      const rndY = Sup.Math.Random.integer(maxY - this.maxArea, maxY);
-      const rndX = Sup.Math.Random.integer(maxX - this.maxArea, maxX);
-      this.grid[rndY][rndX] = Grid.CellState.Alive;
-    }
+  generation = 22;
+  
+  getRandomPosition(from, to) {
+    return {
+      y: Sup.Math.Random.integer(from.y, to.y), 
+      x: Sup.Math.Random.integer(from.x, to.x)
+    };
   }
-  
-  
+
   createBorders() {
     
-    let leftBorder = new Sup.Actor("leftBorder");
-    let rightBorder = new Sup.Actor("rightBorder");
-    let topBorder = new Sup.Actor("topBorder");
-    let bottomBorder = new Sup.Actor("bottomBorder");
+    let leftBorderActor = new Sup.Actor("leftBorder");
+    let rightBorderActor = new Sup.Actor("rightBorder");
+    let topBorderActor = new Sup.Actor("topBorder");
+    let bottomBorderActor = new Sup.Actor("bottomBorder");
 
-    new Sup.SpriteRenderer(leftBorder, "Grid/BorderV");
-    leftBorder.setLocalScaleY(this.columns*(this.cellSize+1));
-    leftBorder.setPosition(-1, this.rows/2+this.cellSize, 0);
-    leftBorderarcadeBody2D.warpPosition(x * this.cellSize, y * this.cellSize);
-    
-    new Sup.SpriteRenderer(rightBorder, "Grid/BorderV");
-    rightBorder.setLocalScaleY(this.columns*(this.cellSize+1));
-    rightBorder.setPosition(this.columns+this.cellSize*2, this.rows/2+this.cellSize, 0);
-    
-    this.borders.push(leftBorder);
-    this.borders.push(rightBorder);
-    
-    let player = Sup.getActor("Player");
-    Sup.ArcadePhysics2D.collides(player.arcadeBody2D, this.borders);
+    new Sup.SpriteRenderer(leftBorderActor, "Grid/BorderV");
+    leftBorderActor.setLocalScaleY(this.columns*this.cellSize+this.cellSize);
+    leftBorderActor.setPosition(-1, this.rows/2+this.cellSize, 0);
+    let leftBorder = new Sup.ArcadePhysics2D.Body(leftBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:0.1, height:this.columns*this.cellSize+this.cellSize, movable: false})
+    leftBorderActor.arcadeBody2D.warpPosition(-1, this.rows/2+this.cellSize);
 
-/*
-    leftBorder.setLocalScaleY(this.columns);
-    rightBorder.setLocalScaleY(this.columns);
-    topBorder.setLocalScaleX(this.rows);
-    bottomBorder.setLocalScaleX(this.rows);
-    leftBorder.arcadeBody2D.warpPosition(-1, 0);
-    rightBorder.arcadeBody2D.warpPosition(this.columns+0.1, 0);
-    topBorder.arcadeBody2D.warpPosition(0, this.rows+0.1);
-    bottomBorder.arcadeBody2D.warpPosition(0, 1);
+    new Sup.SpriteRenderer(rightBorderActor, "Grid/BorderV");
+    rightBorderActor.setLocalScaleY(this.columns*this.cellSize+this.cellSize);
+    rightBorderActor.setPosition(this.columns+this.cellSize*2, this.rows/2+this.cellSize, 0);
+    let rightBorder = new Sup.ArcadePhysics2D.Body(rightBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:0.1, height:this.columns*this.cellSize+this.cellSize, movable: false})
+    rightBorderActor.arcadeBody2D.warpPosition(this.columns*this.cellSize, this.rows/2+this.cellSize);
+
+    new Sup.SpriteRenderer(topBorderActor, "Grid/BorderH");
+    topBorderActor.setLocalScaleX(this.rows*this.cellSize+this.cellSize);
+    topBorderActor.setPosition(this.columns*this.cellSize/2-this.cellSize/2, this.rows*this.cellSize, 0);
+    let topBorder = new Sup.ArcadePhysics2D.Body(topBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:this.rows*(this.cellSize+1), height:0.1, movable: false})
+    topBorderActor.arcadeBody2D.warpPosition(this.columns*this.cellSize/2-this.cellSize/2, this.rows*this.cellSize);
+
+    new Sup.SpriteRenderer(bottomBorderActor, "Grid/BorderH");
+    bottomBorderActor.setLocalScaleX(this.rows*this.cellSize+this.cellSize);
+    bottomBorderActor.setPosition(this.columns*this.cellSize/2-this.cellSize/2, -1, 0);
+    let bottomBorder = new Sup.ArcadePhysics2D.Body(bottomBorderActor,Sup.ArcadePhysics2D.BodyType.Box,  {width:this.rows*(this.cellSize+1), height:0.1, movable: false})
+    bottomBorderActor.arcadeBody2D.warpPosition(this.columns*this.cellSize/2-this.cellSize/2, -1);
 
     this.borders.push(leftBorder);
     this.borders.push(rightBorder);
     this.borders.push(topBorder);
     this.borders.push(bottomBorder);
     
-    let player = Sup.getActor("Player");
-    Sup.ArcadePhysics2D.collides(player.arcadeBody2D, this.borders);
-    */
+
   }
   
   createCells() {
     this.grid = Grid.generateEmptyGrid(this.rows, this.columns);
-    this.setInitAlive();
+    // this.setInitAlive();
     
     const orientation = new Sup.Math.Quaternion();
   
@@ -106,6 +102,7 @@ class GridBehavior extends Sup.Behavior {
       this.updateCellsState(newGrid);
       this.grid = newGrid;
     }, this.generateEvery * 1000);
+    this.generation++;
   }
   
   updateCellsState(grid) {
@@ -131,13 +128,52 @@ class GridBehavior extends Sup.Behavior {
     return this.aliveCells;  
   }
   
+  setRandomRange(from, to, qty) {
+    for (let i=0; i < qty; i++){
+      const rnd = this.getRandomPosition(from, to)
+      this.grid[rnd.y][rnd.x] = Grid.CellState.Growing;
+    }
+  }  
+  
+  initSpawners() {
+    const [actor] = Sup.appendScene("Grid/CellSpawnerPrefab");
+    const offset = 4
+    const halfOffset = offset / 2; // Must Be Integer
+    const rnd = this.getRandomPosition(
+      {x: offset, y: offset},
+      {x: this.columns-offset, y: this.rows-offset}
+    )
+    
+    actor.setPosition(rnd.x, rnd.y);
+    this.spawners.push(actor);
+
+    this.tickSpawners = Utils.throttle(() => {
+      this.setRandomRange(
+        {x: rnd.x-halfOffset, y: rnd.y-halfOffset},
+        {x: rnd.x+halfOffset, y: rnd.y+halfOffset},
+        5
+      )
+      
+      this.updateCellsState(this.grid);
+    }, this.generateEvery * 2000);
+  }
+  
+  getGenerationNumber() : number {
+    return this.generation;
+  }
+  
   awake() {
     this.createCells();
     this.createBorders();
+    this.initSpawners();
   }
 
   update() {
     this.tickGeneration();
+    this.tickSpawners();
+    
+    let player = Sup.getActor("Player");
+    Sup.ArcadePhysics2D.collides(player.arcadeBody2D, this.borders);   
   }
 }
 Sup.registerBehavior(GridBehavior);

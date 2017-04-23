@@ -63,6 +63,10 @@
         {
           "name": "maxArea",
           "type": "number"
+        },
+        {
+          "name": "generation",
+          "type": "number"
         }
       ]
     },
@@ -113,23 +117,12 @@
       "parentBehavior": null,
       "properties": [
         {
-          "name": "rowAt",
+          "name": "gridX",
           "type": "number"
         },
         {
-          "name": "columnAt",
+          "name": "gridY",
           "type": "number"
-        }
-      ]
-    },
-    "HudBehavior": {
-      "scriptId": "39",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "font",
-          "type": "string"
         }
       ]
     },
@@ -157,6 +150,10 @@
         {
           "name": "timeThrottle",
           "type": "number"
+        },
+        {
+          "name": "shotsAvailable",
+          "type": "number"
         }
       ]
     },
@@ -166,11 +163,48 @@
       "parentBehavior": null,
       "properties": []
     },
-    "PowerUpGeneratorBehavior": {
-      "scriptId": "58",
+    "PowerUpBehavior": {
+      "scriptId": "59",
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "CellSpawnerBehavior": {
+      "scriptId": "63",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "spawnEvery",
+          "type": "number"
+        },
+        {
+          "name": "isActive",
+          "type": "boolean"
+        }
+      ]
+    },
+    "GenerationBehavior": {
+      "scriptId": "68",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "font",
+          "type": "string"
+        }
+      ]
+    },
+    "HubBehavior": {
+      "scriptId": "67",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "grid",
+          "type": "any"
+        }
+      ]
     }
   }
 }

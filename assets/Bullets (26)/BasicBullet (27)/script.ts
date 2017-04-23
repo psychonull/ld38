@@ -55,8 +55,21 @@ class BasicBulletBehavior extends Sup.Behavior {
       if(Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, cell.arcadeBody2D)) {
         this.collide();
         gridBehavior.killCell(cell);
+        this.generatePowerUp();
       }
     });
+  }
+  
+  generatePowerUp(){
+    var gen = PowerUpGenerator.getRandom();
+    if(!gen){
+      return;
+    }
+    var actor = Sup.appendScene(Sup.get("PowerUps/PowerUpPrefab", Sup.Scene))[0];
+    actor.setPosition(this.actor.getPosition());
+    actor.arcadeBody2D.warpPosition(actor.getPosition());
+    var powerUpBehavior = actor.getBehavior(PowerUpBehavior);
+    powerUpBehavior.init(gen);
   }
   
   collide() {

@@ -55,47 +55,6 @@
       "prefab": null
     },
     {
-      "id": "13",
-      "name": "HUD",
-      "children": [],
-      "components": [
-        {
-          "type": "TextRenderer",
-          "config": {
-            "formatVersion": 2,
-            "fontAssetId": "6",
-            "text": "Text",
-            "alignment": "center",
-            "verticalAlignment": "center",
-            "size": null,
-            "color": null,
-            "overrideOpacity": false,
-            "opacity": null
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": -0.08202237635850906,
-        "y": -2.8981220722198486,
-        "z": 0
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
       "id": "1",
       "name": "Player",
       "children": [
