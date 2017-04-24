@@ -3,7 +3,9 @@ class GridBehavior extends Sup.Behavior {
   columns = 30;
   cellSize = 1.28;
   generateEvery = 3; // seconds
+  increaseGenerationBy = 1; //seconds
   spawnersAmount = 3;
+  rangeEnemiesPerGen = new Sup.Math.Vector2(15, 30);
   
   maxCellsRandom = 30;
   maxArea = 30;
@@ -14,11 +16,12 @@ class GridBehavior extends Sup.Behavior {
   
   private grid = [];
   private cells = [];
-  private spawners = [];
+  
   private tickGeneration: Function;
   
-  generation = 0;
-  population = 0;
+  private generation = 0;
+  private population = 0;
+  private kills = 0;
   
   getOffset() {
    return  {
@@ -110,11 +113,17 @@ class GridBehavior extends Sup.Behavior {
     
     this.updateCellsState(this.grid);
   
-    this.tickGeneration = Utils.throttle(() => {
+    this.tickGeneration = Utils.throttleExp(() => {
+      if (this.aliveCells.length < 10) {
+        this.runSpawners();
+      }
+      
       const newGrid = Grid.nextGeneration(this.grid);
       this.updateCellsState(newGrid);
       this.grid = newGrid;
       this.generation++;
+      
+      this.generateEvery = Sup.Math.clamp(this.generateEvery - this.increaseGenerationBy, 0.1, 999);
     }, this.generateEvery * 1000);
     
   }
@@ -130,6 +139,7 @@ class GridBehavior extends Sup.Behavior {
     
     for (let y = 0; y < grid.length; y++) {
       for (let x = 0; x < grid[y].length; x++) {
+        
         if(grid[y][x] == Grid.CellState.Alive){
           this.aliveCells.push(this.cells[y][x]);
         }
@@ -137,7 +147,6 @@ class GridBehavior extends Sup.Behavior {
           this.population++;
         }
           
-        
         this.cells[y][x].getBehavior(CellBehavior).setState(grid[y][x]);
       }
     }
@@ -146,7 +155,8 @@ class GridBehavior extends Sup.Behavior {
   killCell(cell: Sup.Actor) {
     let cellBehavior = cell.getBehavior(CellBehavior);
     Sup.Audio.playSound("Grid/HitAlive", 1); 
-    this.grid[cellBehavior.gridY][cellBehavior.gridX] = Grid.CellState.Empty; // Grid.CellState.Dead;
+    this.grid[cellBehavior.gridY][cellBehavior.gridX] = Grid.CellState.Empty;
+    this.kills++;
     this.updateCellsState(this.grid);
   }
   
@@ -154,42 +164,57 @@ class GridBehavior extends Sup.Behavior {
     return this.aliveCells;  
   }
   
-  initSpawners(qty) {
-    for(let i=0; i<qty; i++){
-      const [actor] = Sup.appendScene("Grid/CellSpawnerPrefab");
-      const behavior = actor.getBehavior(CellSpawnerBehavior);
-
-      const ranges = behavior.getRandomEnemyPositions(4, this.columns, this.rows);
+  runSpawners() {
+    for(let i=0; i<this.spawnersAmount; i++){
+      const enemiesAmount = Sup.Math.Random.integer(this.rangeEnemiesPerGen.x, this.rangeEnemiesPerGen.y);
+      const ranges = CellSpawner.getRandomEnemyPositions(4, this.columns, this.rows, enemiesAmount);
+      
       ranges.forEach(rnd => {
-        this.grid[rnd.y][rnd.x] = Grid.CellState.Baby;
+        this.grid[rnd.y][rnd.x] = Grid.CellState.Born;// Grid.CellState.Baby;
       })
-
-      this.updateCellsState(this.grid);
-      this.spawners.push(actor);
     }
   }
   
   getStats() {
-    return {generation: this.generation, population: this.population};
+    return {generation: this.generation, population: this.population, kills: this.kills};
   }
   
   awake() {
+    this.kills = 0;
+    this.population = 0;
     this.oveerridePropsBasedOnGameDifficulty();
     this.createCells();
     this.createBorders();
-    this.initSpawners(this.spawnersAmount);
+    this.runSpawners();
   }
 
   update() {
-    this.tickGeneration();
+    this.tickGeneration(this.generateEvery * 1000);
   }
   
   oveerridePropsBasedOnGameDifficulty() {
-    if(Game.mode === GameModes.zen){
-      this.generateEvery = this.generateEvery + 4;
-    }
-    else if(Game.mode === GameModes.frenzy){
-      this.generateEvery = .2;
+    switch(Game.mode){
+      case GameModes.zen: {
+        this.rangeEnemiesPerGen = new Sup.Math.Vector2(5, 15);
+        this.generateEvery = 5;
+        this.increaseGenerationBy = 0.01;
+        this.spawnersAmount = 1;
+        break;
+      }
+      case GameModes.normal: {
+        this.rangeEnemiesPerGen = new Sup.Math.Vector2(15, 30);
+        this.generateEvery = 5;
+        this.increaseGenerationBy = 0.05;
+        this.spawnersAmount = 3;
+        break;
+      }
+      case GameModes.frenzy: {
+        this.rangeEnemiesPerGen = new Sup.Math.Vector2(20, 40);
+        this.generateEvery = .2;
+        this.increaseGenerationBy = 0;
+        this.spawnersAmount = 4;
+        break;
+      }
     }
   }
 }

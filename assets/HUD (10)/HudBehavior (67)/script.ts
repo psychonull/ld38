@@ -11,7 +11,7 @@ class HubBehavior extends Sup.Behavior {
     let stats = this.grid.getBehavior(GridBehavior).getStats();
     this.actor.getChild("GenerationValue").getBehavior(GenerationBehavior).setGeneration(stats.generation);
     this.actor.getChild("PopulationValue").getBehavior(PopulationBehavior).setPopulation(stats.population);
-    // this.actor.getChild("FPSValue").textRenderer.setText(`FPS: ${Sup.Game.getFPS()}`);
+    this.actor.getChild("KillsValue").getBehavior(KillsBehavior).setKills(stats.kills);
   }
 }
 Sup.registerBehavior(HubBehavior);

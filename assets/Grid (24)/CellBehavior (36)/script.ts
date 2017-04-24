@@ -33,6 +33,7 @@ class CellBehavior extends Sup.Behavior {
     if(nextState === this.currentState) return;
         
     switch(nextState) {
+      case Grid.CellState.Born:
       case Grid.CellState.Baby: { 
         animation = 'GrowingBack'; 
         this.nextAnimation = 'Baby'; 

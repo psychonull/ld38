@@ -1,6 +1,7 @@
 module Grid {
   
   export enum CellState {
+    Born = -2,
     Empty = -1,
     Baby = 0,
     Alive = 1,
@@ -41,6 +42,10 @@ module Grid {
     let value = grid[y][x];
     const alives = countAlives(grid, x, y);
 
+    if (value === CellState.Born) { // Only happen once at first born
+      return CellState.Baby;
+    }
+    
     if (Sup.Math.Random.integer(0, 2) === 1) {
       return value;
     }
