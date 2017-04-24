@@ -19,8 +19,7 @@ module Game {
     // aliveCells.forEach(ac => {
     //   ac.spriteRenderer = new Sup.SpriteRenderer(ac, "Grid/EnemySprite", Sup.SpriteRenderer.MaterialType.Shader, "Shaders/JellyShader");
     // });
-    
-    //Game.music = Sup.Audio.playSound("Music", 0.2, { loop: true });
+   
     Game.playerActor = Sup.getActor("Player");
   }
   
@@ -32,14 +31,19 @@ module Game {
   export function reset(gameMode = GameModes.normal) {
     Game.mode = gameMode;
     Sup.loadScene('Scene');
+    
     let hud = Sup.appendScene(Sup.get("HUD/HudPrefab", Sup.Scene))[0];
     let grid = Sup.appendScene(Sup.get("Grid/GridPrefab", Sup.Scene))[0];
+    
     hud.getBehavior(HubBehavior).initialize(grid);
     this.firstGame = false;
+    
+    if (Game.music) Game.music.stop();
+    Game.music = Sup.Audio.playSound("MusicInGame", 0.2, { loop: true });
   }
   
 }
 
 
-//Game.showTitleScren(); //Descomentar para tener menu inicial
-Game.initialize(); //Comentar para tener menu inicial
+Game.showTitleScren(); //Descomentar para tener menu inicial
+//Game.initialize(); //Comentar para tener menu inicial

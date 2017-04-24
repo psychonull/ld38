@@ -5,6 +5,7 @@ class GameOverBehavior extends Sup.Behavior {
 
   update() {
     if(Sup.Input.wasKeyJustPressed("SPACE")){
+      Sup.Audio.playSound("Menus/SelectMenu", 2);
       Game.initialize();
     }
   }

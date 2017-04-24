@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 77,
+  "nextEntryId": 83,
   "nodes": [
     {
       "id": "5",
@@ -26,6 +26,11 @@
       "name": "Menus",
       "type": null,
       "children": [
+        {
+          "id": "77",
+          "name": "Music",
+          "type": "sound"
+        },
         {
           "id": "3",
           "name": "MainMenu",
@@ -55,6 +60,16 @@
           "id": "69",
           "name": "GameTitleFont",
           "type": "font"
+        },
+        {
+          "id": "80",
+          "name": "ChangeMenu",
+          "type": "sound"
+        },
+        {
+          "id": "81",
+          "name": "SelectMenu",
+          "type": "sound"
         }
       ]
     },
@@ -148,6 +163,11 @@
           "type": "script"
         },
         {
+          "id": "78",
+          "name": "Bullet",
+          "type": "sound"
+        },
+        {
           "id": "28",
           "name": "BasicSprite",
           "type": "sprite"
@@ -210,6 +230,11 @@
           "id": "44",
           "name": "Grid",
           "type": "script"
+        },
+        {
+          "id": "82",
+          "name": "HitAlive",
+          "type": "sound"
         },
         {
           "id": "22",
@@ -279,6 +304,11 @@
       "id": "1",
       "name": "Manager",
       "type": "script"
+    },
+    {
+      "id": "79",
+      "name": "MusicInGame",
+      "type": "sound"
     }
   ]
 }

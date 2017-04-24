@@ -32,6 +32,8 @@ class BasicBulletBehavior extends Sup.Behavior {
     }
     if(this.justShot){ //TODO: Why can't I just call shoot() and set pos there?
       //this.moveSpeed = Sup.Math.lerp(this.moveSpeed, this.maxMoveSpeed, 0.1);
+      Sup.Audio.playSound("Bullets/Bullet", 0.1);
+      
       this.actor.arcadeBody2D.warpPosition(this.position.x, this.position.y);
       this.actor.arcadeBody2D.setVelocity(Math.cos(this.angle) * this.moveSpeed, Math.sin(this.angle) * this.moveSpeed);
       this.actor.setPosition(this.position);

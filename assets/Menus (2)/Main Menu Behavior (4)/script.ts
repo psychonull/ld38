@@ -1,10 +1,14 @@
+
 class MainMenuBehavior extends Sup.Behavior {
   
+  music: Sup.Audio.SoundPlayer;
   currentGameMode = GameModes.normal;
   
   flyingShitTween: Sup.Tween;
   
   awake() {
+    this.music = Sup.Audio.playSound("Menus/Music", 0.2, { loop: true });
+    
     var flyingShit = Sup.getActor("FlyingShit");
     this.flyingShitTween = new Sup.Tween(flyingShit, {scale: 1, color: 0})
       .to({scale: 4, color: 1}, 4000)
@@ -51,6 +55,8 @@ class MainMenuBehavior extends Sup.Behavior {
   }
   
   changeGameMode(dir: number){
+    Sup.Audio.playSound("Menus/ChangeMenu");
+    
     var nextGameMode = this.currentGameMode + dir;
     this.currentGameMode = nextGameMode;
     let textRenderer = Sup.getActor("GameModeLabel").textRenderer;
@@ -58,6 +64,8 @@ class MainMenuBehavior extends Sup.Behavior {
   }
   
   startTween(){
+    Sup.Audio.playSound("Menus/SelectMenu", 2);
+    
     var flyingShit = Sup.getActor("FlyingShit");
     this.flyingShitTween.stop();
     
@@ -66,7 +74,11 @@ class MainMenuBehavior extends Sup.Behavior {
       .onUpdate(obj => {
         flyingShit.setPosition(obj);
       })
-      .onComplete(() => Game.reset(this.currentGameMode))
+      .onComplete(() => {
+        this.music.stop();
+        Sup.Audio.playSound("Menus/SelectMenu", 2);
+        Game.reset(this.currentGameMode);
+      })
       .start();
   }
 }
