@@ -9,5 +9,6 @@
   "gridWidth": 16,
   "gridHeight": 16,
   "charset": null,
-  "charsetOffset": 32
+  "charsetOffset": 32,
+  "name": "Font69"
 }
