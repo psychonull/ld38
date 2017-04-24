@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 88,
+  "nextEntryId": 89,
   "nodes": [
     {
       "id": "5",
@@ -34,6 +34,11 @@
         {
           "id": "3",
           "name": "MainMenu",
+          "type": "scene"
+        },
+        {
+          "id": "88",
+          "name": "GameOver2",
           "type": "scene"
         },
         {
