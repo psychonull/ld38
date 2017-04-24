@@ -129,11 +129,6 @@
           "id": "72",
           "name": "SpeedChange",
           "type": "script"
-        },
-        {
-          "id": "75",
-          "name": "PowerUpsSprite",
-          "type": "sprite"
         }
       ]
     },
