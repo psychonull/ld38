@@ -15,10 +15,10 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "69",
-                "text": "Game: the game",
+                "text": "CELL WARS",
                 "alignment": "center",
                 "verticalAlignment": "center",
-                "size": 60,
+                "size": 90,
                 "color": "ffffff",
                 "overrideOpacity": false,
                 "opacity": null
