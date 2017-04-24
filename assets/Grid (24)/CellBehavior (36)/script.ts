@@ -33,9 +33,24 @@ class CellBehavior extends Sup.Behavior {
     if(nextState === this.currentState) return;
         
     switch(nextState) {
-      case Grid.CellState.Baby: { animation = 'GrowingBack'; this.nextAnimation = 'Baby'; break } 
-      case Grid.CellState.Alive: { animation = 'Growing'; this.nextAnimation = 'Alive';  break; }   
-      case Grid.CellState.Empty: { animation = 'Dying'; this.nextAnimation = 'Empty';  break; }
+      case Grid.CellState.Baby: { 
+        animation = 'GrowingBack'; 
+        this.nextAnimation = 'Baby'; 
+        Sup.Audio.playSound("Grid/Ungrow", 0.2); 
+        break; 
+      } 
+      case Grid.CellState.Alive: { 
+        animation = 'Growing'; 
+        this.nextAnimation = 'Alive';  
+        Sup.Audio.playSound("Grid/Grow", 0.2); 
+        break; 
+      }   
+      case Grid.CellState.Empty: { 
+        animation = 'Dying'; 
+        this.nextAnimation = 'Empty'; 
+        // Sup.Audio.playSound("Grid/Dead", 0.3); 
+        break; 
+      }
     }
     
     sprite.setAnimation(animation, false);

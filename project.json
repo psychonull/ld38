@@ -27,6 +27,11 @@
       "type": null,
       "children": [
         {
+          "id": "77",
+          "name": "Music",
+          "type": "sound"
+        },
+        {
           "id": "3",
           "name": "MainMenu",
           "type": "scene"
@@ -55,6 +60,16 @@
           "id": "69",
           "name": "GameTitleFont",
           "type": "font"
+        },
+        {
+          "id": "80",
+          "name": "ChangeMenu",
+          "type": "sound"
+        },
+        {
+          "id": "81",
+          "name": "SelectMenu",
+          "type": "sound"
         }
       ]
     },
@@ -148,6 +163,11 @@
           "type": "script"
         },
         {
+          "id": "78",
+          "name": "Bullet",
+          "type": "sound"
+        },
+        {
           "id": "28",
           "name": "BasicSprite",
           "type": "sprite"
@@ -195,6 +215,11 @@
           "type": "script"
         },
         {
+          "id": "86",
+          "name": "PlayerHit",
+          "type": "sound"
+        },
+        {
           "id": "51",
           "name": "Multiple Shoot",
           "type": "script"
@@ -210,6 +235,26 @@
           "id": "44",
           "name": "Grid",
           "type": "script"
+        },
+        {
+          "id": "82",
+          "name": "HitAlive",
+          "type": "sound"
+        },
+        {
+          "id": "83",
+          "name": "Dead",
+          "type": "sound"
+        },
+        {
+          "id": "84",
+          "name": "Grow",
+          "type": "sound"
+        },
+        {
+          "id": "85",
+          "name": "Ungrow",
+          "type": "sound"
         },
         {
           "id": "22",
@@ -279,6 +324,11 @@
       "id": "1",
       "name": "Manager",
       "type": "script"
+    },
+    {
+      "id": "79",
+      "name": "MusicInGame",
+      "type": "sound"
     }
   ]
 }

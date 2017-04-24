@@ -2,7 +2,7 @@ class BasicBulletBehavior extends Sup.Behavior {
   
   //TODO - HOW DO WE HANDLE ALIVE STATUS
   
-  moveSpeed = 1;
+  moveSpeed = 0.35;
   
   angle = 0;
   powa = 10;
@@ -32,6 +32,8 @@ class BasicBulletBehavior extends Sup.Behavior {
     }
     if(this.justShot){ //TODO: Why can't I just call shoot() and set pos there?
       //this.moveSpeed = Sup.Math.lerp(this.moveSpeed, this.maxMoveSpeed, 0.1);
+      Sup.Audio.playSound("Bullets/Bullet", 0.1);
+      
       this.actor.arcadeBody2D.warpPosition(this.position.x, this.position.y);
       this.actor.arcadeBody2D.setVelocity(Math.cos(this.angle) * this.moveSpeed, Math.sin(this.angle) * this.moveSpeed);
       this.actor.setPosition(this.position);
@@ -68,6 +70,7 @@ class BasicBulletBehavior extends Sup.Behavior {
     var actor = Sup.appendScene(Sup.get("PowerUps/PowerUpPrefab", Sup.Scene))[0];
     actor.setPosition(this.actor.getPosition());
     actor.arcadeBody2D.warpPosition(actor.getPosition());
+    actor.arcadeBody2D.setMovable(false);
     actor.spriteRenderer.setAnimation(gen.animation);
     actor.spriteRenderer.playAnimation(true);
     var powerUpBehavior = actor.getBehavior(PowerUpBehavior);
@@ -84,7 +87,7 @@ class BasicBulletBehavior extends Sup.Behavior {
      originPosition.z
    );
    let tween = new Sup.Tween(powerUp, { scale: 1, position: originPosition })
-     .to({ scale: 3, position: targetPosition, angle: Sup.Math.Random.float(0, 2) }, Sup.Math.Random.integer(100, 400))
+     .to({ scale: 1.5, position: targetPosition, angle: Sup.Math.Random.float(0, 2) }, Sup.Math.Random.integer(100, 400))
      .onUpdate(obj => {
        powerUp.setPosition(obj.position);
        powerUp.setLocalScale(obj.scale);

@@ -138,12 +138,7 @@
           "type": "Behavior",
           "config": {
             "behaviorName": "SimpleShootBehavior",
-            "propertyValues": {
-              "quantity": {
-                "type": "number",
-                "value": 40
-              }
-            }
+            "propertyValues": {}
           },
           "id": "2"
         },
@@ -212,8 +207,8 @@
         "w": 1
       },
       "scale": {
-        "x": 2.5,
-        "y": 2.5,
+        "x": 1.25,
+        "y": 1.25,
         "z": 1
       },
       "visible": true,

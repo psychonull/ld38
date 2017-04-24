@@ -25,13 +25,14 @@ module PowerUpAnimations {
 module PowerUpGenerator  {
   
   export function getRandom(): PowerUpDefinition {
+    const getNulls = amount => {
+      const nulls = [];
+      for (let i=0; i<amount; i++) nulls.push(null);
+      return nulls;
+    }
+    
     return Sup.Math.Random.sample([
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      ...getNulls(50),
       {
         behavior: SpeedChangeBehavior,
         animation: "Speed",

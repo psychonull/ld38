@@ -11,7 +11,7 @@
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 32,
+    "width": 34,
     "height": 32
   },
   "origin": {
@@ -23,7 +23,7 @@
       "id": "0",
       "name": "MOVING",
       "startFrameIndex": 1,
-      "endFrameIndex": 6,
+      "endFrameIndex": 1,
       "speed": 1
     }
   ],

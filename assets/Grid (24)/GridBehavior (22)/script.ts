@@ -145,6 +145,7 @@ class GridBehavior extends Sup.Behavior {
   
   killCell(cell: Sup.Actor) {
     let cellBehavior = cell.getBehavior(CellBehavior);
+    Sup.Audio.playSound("Grid/HitAlive", 1); 
     this.grid[cellBehavior.gridY][cellBehavior.gridX] = Grid.CellState.Empty; // Grid.CellState.Dead;
     this.updateCellsState(this.grid);
   }

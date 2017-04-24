@@ -5,10 +5,14 @@ class MovementBehavior extends Sup.Behavior {
   targetAngle = 0;
   moveSpeed = 0;
   
-  static maxMoveSpeed = 0.3;
+  static maxMoveSpeed = 1;
   
   modelActor:Sup.Actor;
   orientation = new Sup.Math.Quaternion();
+  
+  private speed: Sup.Math.Vector2 = new Sup.Math.Vector2(0, 0);
+  private defAcceleration = 0.0001;
+  private acceleration = 0.001;
   
   awake() {
     this.modelActor = this.actor.getChild("PlayerSprite");  
@@ -18,35 +22,46 @@ class MovementBehavior extends Sup.Behavior {
   update() {
     this.checkMovement();
     this.checkPointing();
-    if(Sup.Input.wasKeyJustPressed("M")){ //TODO: REMOVE THIS
-      Game.showTitleScren();
-    }
+  }
+  
+  clampSpeed(coord) {
+    return Sup.Math.clamp(coord, -MovementBehavior.maxMoveSpeed, MovementBehavior.maxMoveSpeed);
   }
   
   checkMovement() {
     let angle = Input.getMovementAngle();
+    let pressing = false;
       
     if (angle != null) {
       this.targetAngle = angle;
       this.isMoving = true;
-    }
-    else {
-      this.modelActor.spriteRenderer.setAnimation("iddle");
-      return this.actor.arcadeBody2D.setVelocity(0, 0);
+      pressing = true
     }
     
+    let acc = this.defAcceleration;
+    if (pressing) {
+      acc = this.acceleration + this.moveSpeed;
+    }
+    
+    const vel = new Sup.Math.Vector2(Math.cos(this.targetAngle) * acc, Math.sin(this.targetAngle) * acc);
+    this.speed = this.actor.arcadeBody2D.getVelocity().clone().add(vel);
+    
+    this.speed = new Sup.Math.Vector2(this.clampSpeed(this.speed.x), this.clampSpeed(this.speed.y));
+    this.actor.arcadeBody2D.setVelocity(this.speed);
+    
+    /*
     let velocity = this.actor.arcadeBody2D.getVelocity();
+    this.speed = Sup.Math.clamp(this.speed, 0, MovementBehavior.maxMoveSpeed);
+    velocity.set(Math.cos(this.targetAngle) * this.speed, Math.sin(this.targetAngle) * this.speed);
+    this.actor.arcadeBody2D.setVelocity(velocity);
+    */
     
-    if(this.isMoving) {
-      this.modelActor.spriteRenderer.setAnimation("walk");
-      this.moveSpeed = Sup.Math.lerp(this.moveSpeed, MovementBehavior.maxMoveSpeed, 0.1);
-      velocity.set(Math.cos(this.targetAngle) * this.moveSpeed, Math.sin(this.targetAngle) * this.moveSpeed);
+    if (this.speed.x === 0 && this.speed.y == 0) {
+      this.modelActor.spriteRenderer.setAnimation("iddle");
     }
     else {
-      velocity.set(0,0);  
+      this.modelActor.spriteRenderer.setAnimation("walk");
     }
-    
-    this.actor.arcadeBody2D.setVelocity(velocity);
   }
   
   checkPointing() {
