@@ -70,6 +70,7 @@ class BasicBulletBehavior extends Sup.Behavior {
     var actor = Sup.appendScene(Sup.get("PowerUps/PowerUpPrefab", Sup.Scene))[0];
     actor.setPosition(this.actor.getPosition());
     actor.arcadeBody2D.warpPosition(actor.getPosition());
+    actor.arcadeBody2D.setMovable(false);
     actor.spriteRenderer.setAnimation(gen.animation);
     actor.spriteRenderer.playAnimation(true);
     var powerUpBehavior = actor.getBehavior(PowerUpBehavior);
@@ -86,7 +87,7 @@ class BasicBulletBehavior extends Sup.Behavior {
      originPosition.z
    );
    let tween = new Sup.Tween(powerUp, { scale: 1, position: originPosition })
-     .to({ scale: 3, position: targetPosition, angle: Sup.Math.Random.float(0, 2) }, Sup.Math.Random.integer(100, 400))
+     .to({ scale: 1.5, position: targetPosition, angle: Sup.Math.Random.float(0, 2) }, Sup.Math.Random.integer(100, 400))
      .onUpdate(obj => {
        powerUp.setPosition(obj.position);
        powerUp.setLocalScale(obj.scale);

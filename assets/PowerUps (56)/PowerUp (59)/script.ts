@@ -13,7 +13,6 @@ class PowerUpBehavior extends Sup.Behavior {
   update() {
       if(Sup.ArcadePhysics2D.collides(Sup.getActor("Player").arcadeBody2D, this.actor.arcadeBody2D)){
         this.apply();
-        // Sup.log("POWERUP");
         this.actor.setVisible(false);
         this.destroy();
       }

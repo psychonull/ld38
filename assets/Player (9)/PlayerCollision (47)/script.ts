@@ -23,6 +23,7 @@ class PlayerCollisionBehavior extends Sup.Behavior {
     
     aliveCells.forEach(cell => {
       if(Sup.ArcadePhysics2D.collides(this.actor.arcadeBody2D, cell.arcadeBody2D)) {
+        Sup.Audio.playSound("Player/PlayerHit", 1);
         Sup.loadScene("Menus/GameOver");
       }
     });

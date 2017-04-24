@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 83,
+  "nextEntryId": 87,
   "nodes": [
     {
       "id": "5",
@@ -215,6 +215,11 @@
           "type": "script"
         },
         {
+          "id": "86",
+          "name": "PlayerHit",
+          "type": "sound"
+        },
+        {
           "id": "51",
           "name": "Multiple Shoot",
           "type": "script"
@@ -234,6 +239,21 @@
         {
           "id": "82",
           "name": "HitAlive",
+          "type": "sound"
+        },
+        {
+          "id": "83",
+          "name": "Dead",
+          "type": "sound"
+        },
+        {
+          "id": "84",
+          "name": "Grow",
+          "type": "sound"
+        },
+        {
+          "id": "85",
+          "name": "Ungrow",
           "type": "sound"
         },
         {

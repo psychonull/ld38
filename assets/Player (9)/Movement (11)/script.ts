@@ -11,6 +11,7 @@ class MovementBehavior extends Sup.Behavior {
   orientation = new Sup.Math.Quaternion();
   
   private speed: Sup.Math.Vector2 = new Sup.Math.Vector2(0, 0);
+  private defAcceleration = 0.0001;
   private acceleration = 0.001;
   
   awake() {
@@ -29,13 +30,18 @@ class MovementBehavior extends Sup.Behavior {
   
   checkMovement() {
     let angle = Input.getMovementAngle();
+    let pressing = false;
       
     if (angle != null) {
       this.targetAngle = angle;
       this.isMoving = true;
+      pressing = true
     }
     
-    const acc = this.acceleration + this.moveSpeed;
+    let acc = this.defAcceleration;
+    if (pressing) {
+      acc = this.acceleration + this.moveSpeed;
+    }
     
     const vel = new Sup.Math.Vector2(Math.cos(this.targetAngle) * acc, Math.sin(this.targetAngle) * acc);
     this.speed = this.actor.arcadeBody2D.getVelocity().clone().add(vel);

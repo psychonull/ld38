@@ -39,7 +39,7 @@ module Game {
     this.firstGame = false;
     
     if (Game.music) Game.music.stop();
-    Game.music = Sup.Audio.playSound("MusicInGame", 0.2, { loop: true });
+    Game.music = Sup.Audio.playSound("MusicInGame", 0.1, { loop: true });
   }
   
 }
