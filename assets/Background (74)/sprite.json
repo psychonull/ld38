@@ -7,12 +7,12 @@
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 100,
   "framesPerSecond": 10,
-  "opacity": null,
+  "opacity": 1,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 1024,
-    "height": 1024
+    "width": 2048,
+    "height": 2048
   },
   "origin": {
     "x": 0.5,

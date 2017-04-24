@@ -2,7 +2,7 @@ class BasicBulletBehavior extends Sup.Behavior {
   
   //TODO - HOW DO WE HANDLE ALIVE STATUS
   
-  moveSpeed = 1;
+  moveSpeed = 0.35;
   
   angle = 0;
   powa = 10;
