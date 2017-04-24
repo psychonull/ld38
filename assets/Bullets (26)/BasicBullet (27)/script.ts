@@ -72,6 +72,24 @@ class BasicBulletBehavior extends Sup.Behavior {
     actor.spriteRenderer.playAnimation(true);
     var powerUpBehavior = actor.getBehavior(PowerUpBehavior);
     powerUpBehavior.init(gen);
+    this.animatePowerUp(actor);
+  }
+  
+  animatePowerUp(powerUp: Sup.Actor){
+    const posVar = .5;
+    let originPosition = powerUp.getPosition();
+    let targetPosition = new Sup.Math.Vector3(
+      Sup.Math.Random.float(originPosition.x - posVar, originPosition.x + posVar),
+      Sup.Math.Random.float(originPosition.y - posVar, originPosition.y + posVar),
+      originPosition.z
+    );
+    let tween = new Sup.Tween(powerUp, { scale: 1, position: originPosition })
+      .to({ scale: 3, position: targetPosition, angle: Sup.Math.Random.float(0, 2) }, Sup.Math.Random.integer(100, 400))
+      .onUpdate(obj => {
+        powerUp.setPosition(obj.position);
+        powerUp.setLocalScale(obj.scale);
+      })
+      .start();
   }
   
   collide() {

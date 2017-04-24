@@ -33,10 +33,11 @@ class PowerupsHudBehavior extends Sup.Behavior {
         return;
       }
       let actor = new Sup.Actor("PowerUpHud" + index, this.actor);
-      actor.spriteRenderer = new Sup.SpriteRenderer(actor, "PowerUps/GenericPowerUpSprite");
+      actor.spriteRenderer = new Sup.SpriteRenderer(actor, "PowerUps/PowerUpsSprite");
       actor.spriteRenderer.setAnimation(animation, true);
       actor.spriteRenderer.playAnimation();
-      actor.setLocalX(index);
+      actor.setLocalScale(2.5);
+      actor.setLocalX(index * 0.5);
       this.powerUpsActors.push(actor);
     });
   }

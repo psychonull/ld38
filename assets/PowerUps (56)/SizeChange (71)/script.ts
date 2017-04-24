@@ -4,8 +4,6 @@ class SizeChangeBehavior extends Sup.Behavior {
   time = 3 * 1000;
   tween: Sup.Tween;
   
-  sizeChanged = false;
-  
   timer: number;
   
   awake() {
@@ -14,24 +12,30 @@ class SizeChangeBehavior extends Sup.Behavior {
       .onUpdate(obj => {
         this.actor.setLocalScale(obj.scale);
       })
-      .onComplete(() => this.sizeChanged = true)
+      .onComplete(() => {
+        this.timer = Sup.setTimeout(this.time, () => {
+          this.tween = new Sup.Tween(this.actor, {scale: this.scale})
+            .to({scale: 1}, 400)
+            .onUpdate(obj => {
+              this.actor.setLocalScale(obj.scale);
+            })
+            .onComplete(() => this._destroy())
+            .start();
+        });
+      })
       .start();
+  }
+  
+  _destroy(){ //HACK???
+    try {
+      this.destroy();
+    }
+    catch(ex){
+      Sup.log("error trying to suicide behavior");
+    }
   }
 
   update() {
-    
-    if(this.sizeChanged){
-      this.sizeChanged = false;
-      this.timer = Sup.setTimeout(this.time, () => {
-        this.tween = new Sup.Tween(this.actor, {scale: this.scale})
-          .to({scale: 1}, 400)
-          .onUpdate(obj => {
-            this.actor.setLocalScale(obj.scale);
-          })
-          .onComplete(() => this.destroy())
-          .start();
-      });
-    }
     
   }
   
