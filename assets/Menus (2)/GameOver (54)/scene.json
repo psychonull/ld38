@@ -2,124 +2,273 @@
   "formatVersion": 1,
   "nodes": [
     {
-      "id": "1",
-      "name": "Camera",
-      "children": [],
-      "components": [
+      "id": "7",
+      "name": "GameOverStats",
+      "children": [
         {
-          "type": "Camera",
-          "config": {
-            "formatVersion": 1,
-            "mode": "orthographic",
-            "fov": 45,
-            "orthographicScale": 20,
-            "viewport": {
-              "x": 0,
-              "y": 0,
-              "width": 1,
-              "height": 1
-            },
-            "depth": 0,
-            "nearClippingPlane": 0.1,
-            "farClippingPlane": 1000
+          "id": "5",
+          "name": "Kills",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "69",
+                "text": "Kills: 000\n",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 50,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.9902679324150085,
+            "y": -0.04134643077850342,
+            "z": -5
           },
-          "id": "0"
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "1",
+          "name": "Camera",
+          "children": [],
+          "components": [
+            {
+              "type": "Camera",
+              "config": {
+                "formatVersion": 1,
+                "mode": "orthographic",
+                "fov": 45,
+                "orthographicScale": 20,
+                "viewport": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 1,
+                  "height": 1
+                },
+                "depth": 0,
+                "nearClippingPlane": 0.1,
+                "farClippingPlane": 1000
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.9902679324150085,
+            "y": 1.561190128326416,
+            "z": 0
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "0",
+          "name": "GameOverTitle",
+          "children": [],
+          "components": [
+            {
+              "type": "Behavior",
+              "config": {
+                "behaviorName": "GameOverBehavior",
+                "propertyValues": {}
+              },
+              "id": "1"
+            },
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "69",
+                "text": "Game Over",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 65,
+                "color": null,
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "2"
+            }
+          ],
+          "position": {
+            "x": -0.9902679324150085,
+            "y": 5.511561393737793,
+            "z": -5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1.6322987079620361,
+            "y": 1.2097458839416504,
+            "z": 0.3701116740703583
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "2",
+          "name": "GameOverInstructions",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "69",
+                "text": "Press <<space>> to try again",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 35,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.9902679324150085,
+            "y": -4.307019233703613,
+            "z": -5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "3",
+          "name": "Generations",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "69",
+                "text": "Generations:  000\n",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 50,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.9902679324150085,
+            "y": 2.756934642791748,
+            "z": -5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        },
+        {
+          "id": "4",
+          "name": "Population",
+          "children": [],
+          "components": [
+            {
+              "type": "TextRenderer",
+              "config": {
+                "formatVersion": 2,
+                "fontAssetId": "69",
+                "text": "Population: 000\n",
+                "alignment": "center",
+                "verticalAlignment": "center",
+                "size": 50,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": -0.9902679324150085,
+            "y": 1.4260448217391968,
+            "z": -5
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
         }
       ],
+      "components": [],
       "position": {
         "x": 0,
         "y": 0,
         "z": 5
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "0",
-      "name": "GameOverTitle",
-      "children": [],
-      "components": [
-        {
-          "type": "Behavior",
-          "config": {
-            "behaviorName": "GameOverBehavior",
-            "propertyValues": {}
-          },
-          "id": "1"
-        },
-        {
-          "type": "TextRenderer",
-          "config": {
-            "formatVersion": 2,
-            "fontAssetId": "69",
-            "text": "Game Over",
-            "alignment": "center",
-            "verticalAlignment": "center",
-            "size": 65,
-            "color": null,
-            "overrideOpacity": false,
-            "opacity": null
-          },
-          "id": "2"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1.6322987627837247,
-        "y": 1.209745941303172,
-        "z": 0.3701116682456789
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "2",
-      "name": "GameOverInstructions",
-      "children": [],
-      "components": [
-        {
-          "type": "TextRenderer",
-          "config": {
-            "formatVersion": 2,
-            "fontAssetId": "69",
-            "text": "Press <<space>> to try again",
-            "alignment": "center",
-            "verticalAlignment": "center",
-            "size": 35,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": -7.075409147461187e-9,
-        "y": -1.3465967178344727,
-        "z": 0
       },
       "orientation": {
         "x": 0,

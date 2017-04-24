@@ -11,8 +11,9 @@ module Game {
   export let firstGame: boolean = true;
   export let mode = GameModes.normal;
         
+  export let lastStats = {generation: 0, population: 0, kills: 0};
+        
   export function initialize(){
-    
     Game.reset();
   
     // let aliveCells = Sup.getActor("GridBehavior").getBehavior(GridBehavior).getAliveCells();
@@ -30,6 +31,8 @@ module Game {
   
   export function reset(gameMode = GameModes.normal) {
     Game.mode = gameMode;
+    this.lastStats = {};
+    
     Sup.loadScene('Scene');
     
     let hud = Sup.appendScene(Sup.get("HUD/HudPrefab", Sup.Scene))[0];
