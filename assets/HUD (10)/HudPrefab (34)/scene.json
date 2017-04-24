@@ -74,30 +74,23 @@
           "prefab": null
         },
         {
-          "id": "8",
-          "name": "FPSValue",
+          "id": "10",
+          "name": "KillsValue",
           "children": [],
           "components": [
             {
-              "type": "TextRenderer",
+              "type": "Behavior",
               "config": {
-                "formatVersion": 2,
-                "fontAssetId": "69",
-                "text": "",
-                "alignment": "center",
-                "verticalAlignment": "center",
-                "size": 30,
-                "color": null,
-                "overrideOpacity": false,
-                "opacity": null
+                "behaviorName": "KillsBehavior",
+                "propertyValues": {}
               },
-              "id": "0"
+              "id": "1"
             }
           ],
           "position": {
-            "x": 7.733168125152588,
+            "x": 7.532076835632324,
             "y": 0,
-            "z": 0
+            "z": 2.684999465942383
           },
           "orientation": {
             "x": 0,
@@ -170,7 +163,7 @@
       "position": {
         "x": 0,
         "y": 0,
-        "z": -7
+        "z": 10
       },
       "orientation": {
         "x": 0,

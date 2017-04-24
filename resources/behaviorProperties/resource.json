@@ -57,8 +57,16 @@
           "type": "number"
         },
         {
+          "name": "increaseGenerationBy",
+          "type": "number"
+        },
+        {
           "name": "spawnersAmount",
           "type": "number"
+        },
+        {
+          "name": "rangeEnemiesPerGen",
+          "type": "Sup.Math.Vector2"
         },
         {
           "name": "maxCellsRandom",
@@ -66,14 +74,6 @@
         },
         {
           "name": "maxArea",
-          "type": "number"
-        },
-        {
-          "name": "generation",
-          "type": "number"
-        },
-        {
-          "name": "population",
           "type": "number"
         }
       ]
@@ -177,17 +177,6 @@
       "parentBehavior": null,
       "properties": []
     },
-    "CellSpawnerBehavior": {
-      "scriptId": "63",
-      "line": 0,
-      "parentBehavior": null,
-      "properties": [
-        {
-          "name": "isActive",
-          "type": "boolean"
-        }
-      ]
-    },
     "GenerationBehavior": {
       "scriptId": "68",
       "line": 0,
@@ -272,6 +261,21 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "KillsBehavior": {
+      "scriptId": "87",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "font",
+          "type": "string"
+        },
+        {
+          "name": "kills",
+          "type": "string"
+        }
+      ]
     }
   }
 }

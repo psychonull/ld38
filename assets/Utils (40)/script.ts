@@ -13,6 +13,17 @@ module Utils {
     }
   }
   
+  export function throttleExp(fn:Function, ms: number):Function {
+    let whenToCall = 0;
+    return (nextMS: number) => {
+      if(whenToCall > Date.now()){
+        return;
+      }
+      whenToCall = Date.now() + (nextMS || ms);
+      return fn();
+    }
+  }
+  
   export function delay(fn:Function, ms: number):Function {
     let whenToCall = Date.now() + ms;
     return (...args) => {
