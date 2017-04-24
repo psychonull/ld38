@@ -13,11 +13,11 @@
             "propertyValues": {
               "rows": {
                 "type": "number",
-                "value": 30
+                "value": 35
               },
               "columns": {
                 "type": "number",
-                "value": 30
+                "value": 35
               },
               "cellSize": {
                 "type": "number",

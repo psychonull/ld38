@@ -1,10 +1,15 @@
 {
-  "nextEntryId": 75,
+  "nextEntryId": 76,
   "nodes": [
     {
       "id": "5",
       "name": "Scene",
       "type": "scene"
+    },
+    {
+      "id": "75",
+      "name": "Camera",
+      "type": "script"
     },
     {
       "id": "40",
