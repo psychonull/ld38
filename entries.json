@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 75,
+  "nextEntryId": 77,
   "nodes": [
     {
       "id": "5",
@@ -129,6 +129,11 @@
           "id": "72",
           "name": "SpeedChange",
           "type": "script"
+        },
+        {
+          "id": "76",
+          "name": "PowerUpsSprite",
+          "type": "sprite"
         }
       ]
     },

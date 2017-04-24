@@ -243,10 +243,6 @@
           "type": "number"
         },
         {
-          "name": "sizeChanged",
-          "type": "boolean"
-        },
-        {
           "name": "timer",
           "type": "number"
         }
