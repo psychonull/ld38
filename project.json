@@ -37,6 +37,11 @@
           "type": "scene"
         },
         {
+          "id": "88",
+          "name": "GameOver2",
+          "type": "scene"
+        },
+        {
           "id": "6",
           "name": "Base Font",
           "type": "font"

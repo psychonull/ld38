@@ -15,7 +15,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "69",
-                "text": "CELL WARS",
+                "text": "GAME OVER!",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 90,
@@ -27,8 +27,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 0,
+            "x": -0.413623183965683,
+            "y": 4.668034076690674,
             "z": 0
           },
           "orientation": {
@@ -142,7 +142,7 @@
               "config": {
                 "formatVersion": 2,
                 "fontAssetId": "69",
-                "text": "<<  Game mode:  Normal >>",
+                "text": "<<  Try again in:  Normal >>",
                 "alignment": "center",
                 "verticalAlignment": "center",
                 "size": 32,
@@ -198,9 +198,9 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 3,
-            "z": -1
+            "x": -9.214798927307129,
+            "y": -8.21133804321289,
+            "z": -7.489100933074951
           },
           "orientation": {
             "x": 0,
@@ -216,13 +216,162 @@
           "visible": true,
           "layer": 0,
           "prefab": null
+        },
+        {
+          "id": "11",
+          "name": "GameOverStats",
+          "children": [
+            {
+              "id": "10",
+              "name": "Kills",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "69",
+                    "text": "Kills: 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 50,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.728243887424469,
+                "y": -0.39899998903274536,
+                "z": -15
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "9",
+              "name": "Population",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "69",
+                    "text": "Population: 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 50,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.7459747791290283,
+                "y": 1.0900436639785767,
+                "z": -15
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            },
+            {
+              "id": "8",
+              "name": "Generations",
+              "children": [],
+              "components": [
+                {
+                  "type": "TextRenderer",
+                  "config": {
+                    "formatVersion": 2,
+                    "fontAssetId": "69",
+                    "text": "Generations: 000",
+                    "alignment": "center",
+                    "verticalAlignment": "center",
+                    "size": 50,
+                    "color": null,
+                    "overrideOpacity": false,
+                    "opacity": null
+                  },
+                  "id": "0"
+                }
+              ],
+              "position": {
+                "x": -0.9900000095367432,
+                "y": 2.756999969482422,
+                "z": -15
+              },
+              "orientation": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "visible": true,
+              "layer": 0,
+              "prefab": null
+            }
+          ],
+          "components": [],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 10
+          },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
         }
       ],
       "components": [
         {
           "type": "Behavior",
           "config": {
-            "behaviorName": "MainMenuBehavior",
+            "behaviorName": "GameOverBehavior",
             "propertyValues": {}
           },
           "id": "0"
