@@ -11,11 +11,21 @@ class SpeedChangeBehavior extends Sup.Behavior {
     movementBehavior.moveSpeed = movementBehavior.moveSpeed * this.speedFactor;
     this.timer = Sup.setTimeout(this.time, () => {
       movementBehavior.moveSpeed = previousMoveSpeed;
+      this._destroy();
     });
   }
 
   update() {
     
+  }
+  
+  _destroy(){ //HACK???
+    try {
+      this.destroy();
+    }
+    catch(ex){
+      Sup.log("error trying to suicide behavior");
+    }
   }
   
   onDestroy() {
